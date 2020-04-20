@@ -1,0 +1,1 @@
+INSERT INTO cuisine (ingr,diet,health,cuisineType,mealType,dishType,calories,time,excluded,callback )VALUES('Harry Potter', 'J.K. Rowling', '1234', 'null', 'This is a harry potter book','jhgdjgf','hgfbkhgb','dhbfkjb','kjkjvab','kjdvbfvkb');
