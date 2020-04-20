@@ -3,28 +3,30 @@
 const superagent = require('superagent');
 
 function getCuisineFromApi(request,response,next){
-let url='https://api.edamam.com/search';
-superagent.get(url)
-.query({
-        KEY:process.env.CUISINE_KEY,
-        app_id:process.env.APP_ID,
-        q: search.query,
+  let url='https://api.edamam.com/search';
+  superagent.get(url)
+    .query({
+      app_key:'ee627180bbfefd66310f27f6647fdeeb',
+      app_id:'095f4895',
+      q: 'chicken',
+      cuisineType: request.params.cuisineType
 
-})   
+    })
     .then (cuisineResponse =>{
-        const recipeData = cuisineResponse.body;
-            let recipeResults = recipeData.map(recipe => {
-                return new Recipe(recipe);
-                let viewModel = {
-                    recipe: recipeResults,
-                }
-            });
-            response.render('pages/searches/show', { data: recipeResults });
+      response.send(cuisineResponse.body.hits);
+      const recipeData = cuisineResponse.body.hits;
+      let recipeResults = recipeData.map(recipe => {
+        return new Recipe(recipe);
+      });
+      let viewModel = {
+        recipes: recipeResults,
+      };
+      response.render('pages/searches/show', viewModel);
     })
     .catch(err => {
-        console.error(err);
-        next(err);
-      });
+      console.error(err);
+      next(err);
+    });
 }
 
 // recipe detail handler
@@ -39,22 +41,20 @@ superagent.get(url)
 //edit recipe
 
 
-// add own recipe- will need a form for this 
+// add own recipe- will need a form for this
 
-//recipe constructor 
+//recipe constructor
 function Recipe(recipeData){
-    this.cuisineType = recipeData.hits.recipe.cuisineType;
-    this.mealType = recipeData.hits.recipe.mealType;
-    this.dishtype = recipeData.hits.recipe.dishType;
-    this.recipeName = recipeData.hits.recipe.label;
-    this.image = recipeData.hit.image;
-    this.url = recipeData.hit.url;
-    this.yield = recipeData.hit.yield;
+  this.cuisineType = recipeData.recipe.cuisineType;
+  this.mealType = recipeData.recipe.mealType;
+  this.dishtype = recipeData.recipe.dishType;
+  this.recipeName = recipeData.recipe.label;
+  this.image = recipeData.image;
+  this.url = recipeData.url;
+  this.yield = recipeData.yield;
 }
 
 
 
 //export modules
-module.exports = {
-    getCuisineFromApi
-  };
+module.exports = getCuisineFromApi;
