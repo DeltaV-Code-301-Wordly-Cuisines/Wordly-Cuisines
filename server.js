@@ -21,12 +21,16 @@ app.use(methodOverride('_method'));
 
 
 //renders recipe buttons form
+app.get('/',(request, response) => {
+  response.send('hi');
+});
+
 app.get('/searches/new', (request, response) => {
     response.render('pages/searches/new');
   });
 
 //render response from getCuisineFromApi
-app.post('/searches/show', getCuisineFromApi);
+app.get('/searches/show', getCuisineFromApi);
 
 // establish server
 // client.connect()
@@ -37,6 +41,6 @@ app.post('/searches/show', getCuisineFromApi);
 //     console.error(err);
 //   });
 
-app.get('*', (request, response) => response.status(404).render('./pages/error-view', {error:'(404) Page not found'}));
+//app.get('*', (request, response) => response.status(404).render('./pages/error-view', {error:'(404) Page not found'}));
 app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
 
