@@ -10,23 +10,28 @@
 
     
   </header>
-  <main id="main-content">
-
-    <% recipes.forEach(recipe => {%>
-    <img src="<%= recipe.image %>"/>
-    <p><%= recipe.recipeName %></p>
-    <p><%= recipe.cuisineType %></p>
-    <p><%= recipe.yield %></p>
-    <p><%= recipe.url %></p>
-    
-    <% }) %>
+  
+    <main id="main-content">
+    <section>
+        <% recipes.forEach(recipe => {%>
+            <img src="<%= recipe.image %>"/>
+            <p><%= recipe.recipeName %></p>
+            <p><%= recipe.cuisineType %></p>
+            <p><%= recipe.yield %></p>
+            <p><%= recipe.url %></p>
+            
+            <% }) %>
+    </section>
+   
 
 
   </main>
+  </body>
+  
+   
   <footer id="footer">
 
    
 
   </footer>
-</body>
 </html>
