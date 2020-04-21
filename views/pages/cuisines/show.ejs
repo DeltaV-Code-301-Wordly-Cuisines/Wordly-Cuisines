@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+
+    
+  </head>
+<body>
+  <header id="header">
+
+
+    
+  </header>
+  <main id="main-content">
+
+    <% recipes.forEach(recipe => {%>
+    <img src="<%= recipe.image %>"/>
+    <p><%= recipe.recipeName %></p>
+    <p><%= recipe.cuisineType %></p>
+    <p><%= recipe.yield %></p>
+    <p><%= recipe.url %></p>
+    
+    <% }) %>
+
+
+  </main>
+  <footer id="footer">
+
+   
+
+  </footer>
+</body>
+</html>
