@@ -12,9 +12,9 @@ function getCuisineFromApi(request,response,next){
 
     })
     .then (cuisineResponse =>{
-      response.send(cuisineResponse.body.hits);
       const recipeData = cuisineResponse.body.hits;
       let recipeResults = recipeData.map(recipe => {
+      
         return new Recipe(recipe);
       });
       let viewModel = {
@@ -48,9 +48,9 @@ function Recipe(recipeData){
   this.mealType = recipeData.recipe.mealType;
   this.dishtype = recipeData.recipe.dishType;
   this.recipeName = recipeData.recipe.label;
-  this.image = recipeData.image;
-  this.url = recipeData.url;
-  this.yield = recipeData.yield;
+  this.image = recipeData.recipe.image;
+  this.url = recipeData.recipe.url;
+  this.yield = recipeData.recipe.yield;
 }
 
 
