@@ -1,0 +1,9 @@
+/*      pages/searches/show      */
+/* mobile */
+@media(max-width:767px){
+  body{
+    background: radial-gradient(circle, rgb(91, 251, 63) 0%, rgb(30, 116, 22) 46%, rgb(13, 73, 6) 100%);
+    text-align:center;
+    
+}
+}
