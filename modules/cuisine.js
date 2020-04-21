@@ -1,21 +1,21 @@
 'use strict';
 
 const superagent = require('superagent');
-const client=require('../data/database');
+const client = require('../data/database');
 
-function getCuisineFromApi(request,response,next){
-  let url='https://api.edamam.com/search';
+function getCuisineFromApi(request, response, next) {
+  let url = 'https://api.edamam.com/search';
   superagent.get(url)
     .query({
-      app_key:'ee627180bbfefd66310f27f6647fdeeb',
-      app_id:'095f4895',
+      app_key: 'ee627180bbfefd66310f27f6647fdeeb',
+      app_id: '095f4895',
       q: request.params.cuisineType
 
     })
-    .then (cuisineResponse =>{
+    .then(cuisineResponse => {
       const recipeData = cuisineResponse.body.hits;
       let recipeResults = recipeData.map(recipe => {
-      
+
         return new Recipe(recipe);
       });
       let viewModel = {
@@ -42,21 +42,21 @@ function getNutritionDetail(request, response) {
   client.query(SQL, [request.params.id])
     .then(results => {
       const { rows } = results;
-      
-        response.render('pages/searches/details', {
-          recipe: rows[0]
-        });
-      
+
+      response.render('pages/searches/details', {
+        recipe: rows[0]
+      });
+
     })
     .catch((err) => {
       console.error(err);
-})
+    })
 }
 
 
-function showRecipeDetails(request,response){
-console.log(request.body);
-response.render('pages/cuisines/details', {recipe:JSON.parse(request.body.recipe)});
+function showRecipeDetails(request, response) {
+  console.log(request.body);
+  response.render('pages/cuisines/details', { recipe: JSON.parse(request.body.recipe) });
 
 }
 
@@ -69,12 +69,61 @@ response.render('pages/cuisines/details', {recipe:JSON.parse(request.body.recipe
 
 
 // add own recipe- will need a form for this
+function addRecipe(request, response) {
+
+  const { url, ingredient, recipeName, image } = JSON.parse(request.body.recipe);
+  const searchQuery = `SELECT * FROM favoriteRecipe WHERE url=$1 `;
+  client.query(searchQuery, [url])
+    .then(searchResults => {
+      const SQL = `
+    INSERT INTO favoriteRecipe ( url, ingredient,  recipeName ,image)
+    VALUES ($1, $2, $3, $4)
+    RETURNING id
+  `;
+      const values = [url, ingredient, recipeName, image];
+
+      // POST - REDIRECT - GET
+      if (searchResults.rowCount < 1 ) {
+        client.query(SQL, values)
+            .then(results=>{
+              response.redirect(`/favorite`);
+            })
+          .catch((err) => {
+            console.error(err);
+
+          });
+      }else{
+        response.send('the recipe already exist')
+      }
+      
+    })
+}
+
+function showrecipe(request, response) {
+
+  const SQL = ' SELECT *FROM favoriteRecipe ; ';
+
+  client.query(SQL)
+    .then(results => {
+      const { rowCount, rows } = results;
+      console.log(rows);
+      response.render('pages/cuisines/favorite', {
+        recipes: rows,
+        rowcount: rowCount
+      });
+
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+}
+
 
 //recipe constructor
-function Recipe(recipeData){
+function Recipe(recipeData) {
   this.cuisineType = recipeData.recipe.cuisineType;
-  this.ingredient= recipeData.recipe.ingredientLines;
-  this.totalNutrients=recipeData.recipe.totalNutrients;
+  this.ingredient = recipeData.recipe.ingredientLines;
+  this.totalNutrients = recipeData.recipe.totalNutrients;
   this.mealType = recipeData.recipe.mealType;
   this.dishtype = recipeData.recipe.dishType;
   this.recipeName = recipeData.recipe.label;
@@ -86,4 +135,4 @@ function Recipe(recipeData){
 
 
 //export modules
-module.exports = {getCuisineFromApi,getNutritionDetail,showRecipeDetails};
+module.exports = { getCuisineFromApi, getNutritionDetail, showRecipeDetails, addRecipe, showrecipe };
