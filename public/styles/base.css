@@ -1,0 +1,136 @@
+/* mobile */
+/* @media (min-width:0px){
+    body{
+    background: radial-gradient(circle, rgb(91, 251, 63) 0%, rgb(30, 116, 22) 46%, rgb(13, 73, 6) 100%);
+    text-align:center;
+  }
+  h3#buttons{
+    font-size: 50px;
+    color: honeydew;
+    text-align: center;
+    font-weight: bolder;
+    margin:3rem;
+  }
+   main#buttons{
+    text-align:center;
+  }
+  button{
+    background-color: rgb(236, 175, 175);
+    padding:10%;
+    font-weight: bolder;
+    margin-bottom:5px;
+    font-size:2rem;
+    text-align: center;
+    padding-left:20%;
+    padding-right:20%;
+
+  }
+}
+}  */
+
+@media only screen and (max-width:414px){
+  body{
+    background: radial-gradient(circle, rgb(91, 251, 63) 0%, rgb(30, 116, 22) 46%, rgb(13, 73, 6) 100%);
+    text-align:center;
+  }
+  h3#buttons{
+    font-size: 50px;
+    color: honeydew;
+    text-align: center;
+    font-weight: bolder;
+    margin:3rem;
+  }
+  main#buttons{
+    text-align:center;
+  }
+  button{
+    background-color: rgb(236, 175, 175);
+    padding:10%;
+    font-weight: bolder;
+    margin-bottom:5px;
+    font-size:2rem;
+    text-align: center;
+    padding-left:20%;
+    padding-right:20%;
+
+  }
+}
+
+/* tablet */
+@media(min-width:768px){
+  body{
+    background: radial-gradient(circle, rgb(8, 41, 40) 0%, rgb(95, 39, 226) 46%, rgb(132, 134, 11) 100%);
+  }
+  
+  h3#buttons{
+    font-size: 25px;
+    color: honeydew;
+    text-align: center;
+    font-weight: bolder;
+    margin:10px;
+  }
+  main#buttons{
+    text-align:center;
+  }
+  button{
+    background-color: rgb(236, 175, 175);
+    padding:10%;
+    font-weight: bolder;
+    margin-left:35%;
+    margin-right:50%;
+  }
+}
+
+@media only screen and (max-width:1366){
+  body{
+    background: radial-gradient(circle, rgb(8, 41, 40) 0%, rgb(95, 39, 226) 46%, rgb(132, 134, 11) 100%);
+  }
+  
+  h3#buttons{
+    font-size: 25px;
+    color: honeydew;
+    text-align: center;
+    font-weight: bolder;
+    margin:10px;
+  }
+  main#buttons{
+    text-align:center;
+  }
+  button{
+    background-color: rgb(236, 175, 175);
+    padding:10%;
+    font-weight: bolder;
+    margin-left:35%;
+    margin-right:50%;
+  }
+}
+
+/* desktop */
+@media(min-width:1367px){
+body{
+  background: radial-gradient(circle, rgba(63,251,247,1) 0%, rgba(83,185,164,1) 46%, rgba(72,70,252,1) 100%);
+}
+
+h3#buttons{
+  font-size:50px;
+  color: rgb(121, 10, 131);
+  text-align: center;
+  font-weight: bolder;
+
+}
+main#buttons{
+  text-align:center;
+
+}
+
+button{
+  background-color: rgb(236, 175, 175);
+  padding:10px;
+  font-weight: bolder;
+  margin:0px;
+}
+button:hover{
+  background-color:purple;
+  color:honeydew;
+}
+};
