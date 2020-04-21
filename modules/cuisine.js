@@ -74,7 +74,7 @@ response.render('pages/cuisines/details', {recipe:JSON.parse(request.body.recipe
 function Recipe(recipeData){
   this.cuisineType = recipeData.recipe.cuisineType;
   this.ingredient= recipeData.recipe.ingredientLines;
-  this.totalDaily=recipeData.recipe.totalDaily;
+  this.totalNutrients=recipeData.recipe.totalNutrients;
   this.mealType = recipeData.recipe.mealType;
   this.dishtype = recipeData.recipe.dishType;
   this.recipeName = recipeData.recipe.label;
