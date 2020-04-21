@@ -1,6 +1,7 @@
 'use strict';
 
 const superagent = require('superagent');
+const client=require('../data/database');
 
 function getCuisineFromApi(request,response,next){
   let url='https://api.edamam.com/search';
@@ -29,8 +30,35 @@ function getCuisineFromApi(request,response,next){
 }
 
 // recipe detail handler
+function getNutritionDetail(request, response) {
+
+  const SQL = `
+    SELECT ingredient,calories, recipeName, image 
+    FROM cuisine
+    WHERE id = $1
+    LIMIT 1;
+  `;
+
+  client.query(SQL, [request.params.id])
+    .then(results => {
+      const { rows } = results;
+      
+        response.render('pages/searches/details', {
+          recipe: rows[0]
+        });
+      
+    })
+    .catch((err) => {
+      console.error(err);
+})
+}
 
 
+function showRecipeDetails(request,response){
+console.log(request.body);
+response.render('pages/cuisines/details', {recipe:JSON.parse(request.body.recipe)});
+
+}
 
 // favorited recipe handler
 
@@ -45,6 +73,8 @@ function getCuisineFromApi(request,response,next){
 //recipe constructor
 function Recipe(recipeData){
   this.cuisineType = recipeData.recipe.cuisineType;
+  this.ingredient= recipeData.recipe.ingredientLines;
+  this.totalDaily=recipeData.recipe.totalDaily;
   this.mealType = recipeData.recipe.mealType;
   this.dishtype = recipeData.recipe.dishType;
   this.recipeName = recipeData.recipe.label;
@@ -56,4 +86,4 @@ function Recipe(recipeData){
 
 
 //export modules
-module.exports = getCuisineFromApi;
+module.exports = {getCuisineFromApi,getNutritionDetail,showRecipeDetails};

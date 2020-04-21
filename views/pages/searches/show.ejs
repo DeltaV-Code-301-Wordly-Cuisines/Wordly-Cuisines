@@ -14,11 +14,15 @@
   <main id="main-content">
 
     <% recipes.forEach(recipe => {%>
+    <a href="<%= recipe.url %>"> recipe</a>
     <img src="<%= recipe.image %>"/>
     <p><%= recipe.recipeName %></p>
     <p><%= recipe.cuisineType %></p>
     <p><%= recipe.yield %></p>
-    <p><%= recipe.url %></p>
+    <form action="/recipe/<%= recipe.recipeName %>" method="POST">
+     <input type="hidden" name="recipe" value="<%=JSON.stringify(recipe) %>">
+     <input type="submit" value="View Recipe Details"/>
+    </form>
     
 
     <% }) %>
