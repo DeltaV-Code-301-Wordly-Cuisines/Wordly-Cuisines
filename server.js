@@ -7,8 +7,10 @@ const cors = require('cors');
 //const client = require('./utility/database');
 const methodOverride = require('method-override');
 const PORT = process.env.PORT || 3000;
-const getCuisineFromApi = require('./modules/cuisine');
-// const {getCuisineFromApi} = cuisineModule;
+const cuisineModule = require('./modules/cuisine');
+const {getCuisineFromApi,getNutritionDetail,showRecipeDetails} = cuisineModule;
+const client =require('./data/database');
+
 
 
 
@@ -31,16 +33,19 @@ app.get('/searches/new', (request, response) => {
 
 //render response from getCuisineFromApi
 app.get('/cuisines/:cuisineType', getCuisineFromApi);
+app.post('/recipe/:recipeName',showRecipeDetails);
+// app.get('/details/:id', getNutritionDetail);
 
 // establish server
-// client.connect()
-//   .then(() => {
-//     console.log('PG is listening!');
-//   })
-//   .catch((err) => {
-//     console.error(err);
-//   });
+client.connect()
+  .then(() => {
+    console.log('PG is listening!');
+  })
+  .catch((err) => {
+    console.error(err);
+  });
 
 //app.get('*', (request, response) => response.status(404).render('./pages/error-view', {error:'(404) Page not found'}));
 app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
+
 
