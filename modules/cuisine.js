@@ -69,6 +69,9 @@ response.render('pages/cuisines/details', {recipe:JSON.parse(request.body.recipe
 
 
 // add own recipe- will need a form for this
+function displayPersonalRecipeForm(request, response){
+  response.render('pages/searches/createRecipe');
+}
 
 //recipe constructor
 function Recipe(recipeData){
@@ -86,4 +89,4 @@ function Recipe(recipeData){
 
 
 //export modules
-module.exports = {getCuisineFromApi,getNutritionDetail,showRecipeDetails};
+module.exports = {getCuisineFromApi,getNutritionDetail,showRecipeDetails, displayPersonalRecipeForm};
