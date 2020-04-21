@@ -12,7 +12,6 @@ function getCuisineFromApi(request,response,next){
 
     })
     .then (cuisineResponse =>{
-      response.send(cuisineResponse.body.hits);
       const recipeData = cuisineResponse.body.hits;
       let recipeResults = recipeData.map(recipe => {
         return new Recipe(recipe);
