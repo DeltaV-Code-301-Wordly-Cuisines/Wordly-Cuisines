@@ -8,8 +8,7 @@ function getCuisineFromApi(request,response,next){
     .query({
       app_key:'ee627180bbfefd66310f27f6647fdeeb',
       app_id:'095f4895',
-      q: 'chicken',
-      cuisineType: request.params.cuisineType
+      q: request.params.cuisineType
 
     })
     .then (cuisineResponse =>{
