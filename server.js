@@ -7,8 +7,8 @@ const cors = require('cors');
 //const client = require('./utility/database');
 const methodOverride = require('method-override');
 const PORT = process.env.PORT || 3000;
-const cuisineModule = require('./modules/cuisine');
-const {getCuisineFromApi} = cuisineModule;
+const getCuisineFromApi = require('./modules/cuisine');
+// const {getCuisineFromApi} = cuisineModule;
 
 
 
@@ -30,7 +30,7 @@ app.get('/searches/new', (request, response) => {
   });
 
 //render response from getCuisineFromApi
-app.get('/searches/show', getCuisineFromApi);
+app.get('/cuisines/:cuisineType', getCuisineFromApi);
 
 // establish server
 // client.connect()
