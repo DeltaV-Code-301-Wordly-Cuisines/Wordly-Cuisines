@@ -15,3 +15,12 @@ CREATE TABLE IF NOT EXISTS cuisine (
     calories VARCHAR(5000),
     time  VARCHAR(5000)
 );
+
+DROP TABLE IF EXISTS favoriteRecipe;
+CREATE TABLE IF NOT EXISTS favoriteRecipe(
+id SERIAL PRIMARY KEY,
+recipeName VARCHAR(500),
+image VARCHAR(500),
+url VARCHAR(500),
+ingredient VARCHAR(500)
+);
