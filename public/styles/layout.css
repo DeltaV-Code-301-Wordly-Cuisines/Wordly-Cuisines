@@ -1,21 +1,94 @@
 
 
 /*----------------- ---------HEADER STYLING---------------------------------- */
-header {
-    background-color: aliceblue;
-    width: auto;
-    height: 100px;
-}
-nav {
-    background-color: blueviolet;
+/* mobile */
+@media(max-width:767px){
+    html{
+        display:grid;
+    }
+    h1{
+        font-size:2rem;
+    }
+    header {
+        background-color: aliceblue;
+        width: auto;
+        height: 100px;
     
-}
+        
+      }
+      nav {
+          background-color: blueviolet;
+        
+      }
 
+    }
+  
+    a.header{
+        font-size:auto;
+        color:honeydew;
+        
+  }
+  h1{
+      color:black;
+
+  }
+  
+  /* tablet */
+  @media(min-width:768px){
+      h1{
+          font-size:2rem;
+      }
+    header {
+        display:grid;
+      background-color: aliceblue;
+      /* width: 250px;
+      float:left; */
+   
+ 
+    }
+    nav {
+        background-color: blueviolet;
+        /* width:250px;
+        height:100%%; */
+
+    ;
+  
+      
+    }
+  a.header{
+      color:honeydew;
+      margin-left:10px;
+      font-size: 25px;
+
+  }
+  h1{
+      text-align: center;
+  }
+  
+  }
+
+  
+  /* desktop */
+  @media(min-width:1025px){
+      h1{
+          font-size:2rem;
+      }
+    header {
+      background-color: aliceblue;
+      width: auto;
+      height: 5rem;
+    }
+    nav {
+      background-color: blueviolet;
+    }
+  
+  }
 /*------------------------------------------- FOOTER STYLING -----------------------*/
 footer {
-    height: 150px;
+    height: 50px;
       background: rgb(255, 252, 252);
       width: 100%;
       bottom: 0;
+      text-align:center;
       
   }
