@@ -69,6 +69,7 @@ function showRecipeDetails(request, response) {
 
 
 // add own recipe- will need a form for this
+
 function addRecipe(request, response) {
 
   const { url, ingredient, recipeName, image } = JSON.parse(request.body.recipe);
@@ -116,6 +117,10 @@ function showrecipe(request, response) {
     .catch((err) => {
       console.error(err);
     });
+}
+
+function displayPersonalRecipeForm(request, response){
+  response.render('pages/searches/createRecipe');
 }
 
 
