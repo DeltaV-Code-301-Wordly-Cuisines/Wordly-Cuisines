@@ -204,5 +204,5 @@ client.query(SQL, parameters)
 
 //export modules
 
-module.exports = { getCuisineFromApi, getNutritionDetail, showRecipeDetails, addRecipe, showrecipe, displayPersonalRecipeForm, addPersonalRecipe, showPersonalRecipe, deleteFavorite,updateOneRecipe,editOneRecipe };
+module.exports = { getCuisineFromApi, showRecipeDetails, addRecipe, showrecipe, displayPersonalRecipeForm, addPersonalRecipe, showPersonalRecipe, deleteFavorite,updateOneRecipe,editOneRecipe };
 
