@@ -159,7 +159,7 @@ function showPersonalRecipe(request, response) {
       console.log(rows);
       response.render('pages/cuisines/recipeBox', {
         recipes: rows,
-        rowcount: rowCount
+        count: rowCount
       });
 
     })
