@@ -30,10 +30,10 @@
           <label for="one"><i class="fas fa-frown"></i></label>
         </form>
       </div> 
-       <form action="/recipe/<%= recipe.recipeName %>" method="POST">
-            <input type="hidden" name="recipe" value="<%=JSON.stringify(recipe) %>">
-            <input type="submit" value="View Recipe Details"/>
-           </form>
+      
+      <form action="/favorite/<%= recipe.id %>?_method=DELETE" method="POST">
+        <button>DELETE</button>
+    </form>
 
            <a href="favorite/<%= recipe.id %>/edit">EDIT</a>
 

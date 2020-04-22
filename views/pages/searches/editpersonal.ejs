@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+</head>
+
+<body>
+
+    <main>
+
+
+        <section class="create-view container">
+            <h2 class="view-title">Edit your personal recipe <%= personal.id %></h2>
+            <form id="update-form" action="/recipebox/<%= personal.id %>/edit?_method=PUT" method="post">
+
+                <input type="text" name="ingredient" value="<%= personal.ingredient %>" placeholder="ingredient">
+                <input type="text" name="recipeName" value="<%= personal.recipeName %>" placeholder="recipeName">
+                <input type="text" name="cuisineType" value="<%= personal.cuisineType %>" placeholder="cuisineType">
+                <input type="text" name="mealType" value="<%= personal.mealType %>" placeholder="mealType">
+                <input type="text" name="dishType" value="<%= personal.dishType %>" placeholder="dishType">
+
+                <button type="submit">Update YOUR RECIPE</button>
+            </form>
+        </section>
+
+    </main>
+</body>
+
+</html>

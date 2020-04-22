@@ -17,6 +17,13 @@
             <p><%= personalRecipe.mealType %></p>
             <p><%= personalRecipe.dishType %></p>
             <p><%= personalRecipe.ingredient %></p>
+
+            <form action="/recipebox/<%=personalRecipe.id %>?_method=DELETE" method="POST">
+                <button>DELETE</button>
+            </form>
+
+            <a href="recipebox/<%= personalRecipe.id %>/edit">EDIT</a>
+
         <%})%>   
       
     </main>

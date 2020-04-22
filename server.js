@@ -9,7 +9,7 @@ const methodOverride = require('method-override');
 const PORT = process.env.PORT || 3000;
 const cuisineModule = require('./modules/cuisine');
 
-const {getCuisineFromApi,addRecipe,showRecipeDetails,showrecipe, displayPersonalRecipeForm, addPersonalRecipe, showPersonalRecipe,deleteFavorite,updateOneRecipe,editOneRecipe} = cuisineModule;
+const {getCuisineFromApi,addRecipe,showRecipeDetails,showrecipe, displayPersonalRecipeForm, addPersonalRecipe, showPersonalRecipe,deleteFavorite,updateOneRecipe,editOneRecipe,deletePersonal,updateOnePersonalRecipe,editOnePersonalRecipe} = cuisineModule;
 
 const client =require('./data/database');
 
@@ -42,7 +42,7 @@ app.get('/recipe/favorite', (request,response) => {
 
 
 //nav for recipe box
-app.get('/recipebox/:id',showPersonalRecipe);
+app.get('/recipebox',showPersonalRecipe);
 
 // For the new search page
 app.get('/recipes/search', (request,response) => {
@@ -55,8 +55,7 @@ app.get('/recipes/create', displayPersonalRecipeForm)
 app.post('/recipes/create', displayPersonalRecipeForm)
 
 // rendering of personal recipe form into recipe box
-app.post('/recipebox', addPersonalRecipe)
-
+app.post('/recipebox', addPersonalRecipe);
 app.get('/searches/new', (request, response) => {
     response.render('pages/searches/new');
   });
@@ -69,8 +68,10 @@ app.post('/favorite',addRecipe);
 app.get('/favorite',showrecipe);
 app.delete('/favorite/:id',deleteFavorite);
 app.put('/favorite/:id/edit',updateOneRecipe);
+app.put('/recipebox/:id/edit',updateOnePersonalRecipe);
 app.get('/favorite/:id/edit', editOneRecipe);
-
+app.get('/recipebox/:id/edit',editOnePersonalRecipe);
+app.delete('/recipebox/:id',deletePersonal);
 // establish server
 client.connect()
   .then(() => {
