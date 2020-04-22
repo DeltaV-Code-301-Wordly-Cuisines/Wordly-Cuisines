@@ -7,19 +7,19 @@
 /* mobile */
 @media(max-width:767px){
   /* new search */
-  main#buttons.contain{
+  main#buttons.cuisine-container{
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: 19;
   }
   
   body{
-    background: radial-gradient(circle, rgb(91, 251, 63) 0%, rgb(30, 116, 22) 46%, rgb(13, 73, 6) 100%);
+    background:honeydew;
     text-align:center;
   }
   h3#buttons{
     font-size: 50px;
-    color: honeydew;
+    color: #1E90FF;
     text-align: center;
     font-weight: bolder;
     margin:2rem;
@@ -44,7 +44,9 @@
   h3.appDescription{
     font-size:1.5rem;
     font-weight: bolder;
-    color:honeydew;
+
+    color:#1E90FF;
+
   }
   p.appDescription{
     font-size:25px;
@@ -56,7 +58,7 @@
   }
   div.create-user-form{
     text-align:center;
-    color:rgb(204, 197, 203);
+    color:#1E90FF;
     font-size:20px;
   }
   button.create-user-form{
@@ -88,7 +90,7 @@ img{
 /* tablet */
 @media(min-width:768px){
 /* new search */
-  main#buttons.contain{
+  main#buttons.cuisine-container{
     display: grid;
     grid-template-columns: 33%33%33% ;
     grid-template-rows:12%12%12%12%12%12%;
@@ -96,7 +98,7 @@ img{
   }
 
   body{
-    background: radial-gradient(circle, rgb(8, 41, 40) 0%, rgb(95, 39, 226) 46%, rgb(132, 134, 11) 100%);
+    background: honeydew;
   }
   
   h3#buttons{
@@ -126,21 +128,21 @@ h3.appDescription{
   font-size:2rem;
   font-weight: bolder;
   text-align:center;
-  color:rgb(255, 255, 255);
+  color:#1E90FF;
   /* margin-left:250px; */
 }
 p.appDescription{
   font-size:25px;
-   margin-left:50px;
-  margin-right:50px; 
+   margin-left:25px;
+  margin-right:25px; 
   text-align: center;
-  color:honeydew;
+  color:#1E90FF;
 
   
 }
 div.create-user-form{
   text-align:center;
-  color:rgb(204, 197, 203);
+  color:#1E90FF;
   font-size:20px;
 }
 button.create-user-form{
@@ -163,7 +165,7 @@ button.create-user-form-fb{
 /* desktop */
 @media(min-width:1025px){
 body{
-  background: radial-gradient(circle, rgba(63,251,247,1) 0%, rgba(83,185,164,1) 46%, rgba(72,70,252,1) 100%);
+  background: honeydew;
 }
 
 h3#buttons{
@@ -197,7 +199,9 @@ button.new:hover{
 
  
 }
-/* div.container{
+
+div.home-container{
+
   margin-left:20%;
   margin-right:20%;
 } */
@@ -205,21 +209,23 @@ h3.appDescription{
   font-size:2rem;
   font-weight: bolder;
   text-align:center;
-  color:honeydew;
+  color:#1E90FF);;
+
   /* margin-left:250px; */
 }
 p.appDescription{
   font-size:25px;
-   margin-left:50px;
-  margin-right:50px; 
+   margin-left:25px;
+  margin-right:25px; 
   text-align: center;
-  /* color:black; */
+  color:#1E90FF;
+
 
   
 }
 div.create-user-form{
   text-align:center;
-  color:black;
+  color:#1E90FF;
   font-size:20px;
 }
 button.create-user-form{
