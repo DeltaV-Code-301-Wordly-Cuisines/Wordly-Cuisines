@@ -100,6 +100,9 @@ function addRecipe(request, response) {
     })
 }
 
+
+
+//RENAME THIS
 function showrecipe(request, response) {
 
   const SQL = ' SELECT *FROM favoriteRecipe ; ';
@@ -119,8 +122,11 @@ function showrecipe(request, response) {
     });
 }
 
-function displayPersonalRecipeForm(request, response){
-  response.render('pages/searches/createRecipe');
+
+
+//handler to create recipe form
+function displayPersonalRecipeForm (request, response) {
+  response.render('pages/cuisines/createRecipe');
 }
 
 
@@ -140,4 +146,4 @@ function Recipe(recipeData) {
 
 
 //export modules
-module.exports = { getCuisineFromApi, getNutritionDetail, showRecipeDetails, addRecipe, showrecipe };
+module.exports = { getCuisineFromApi, getNutritionDetail, showRecipeDetails, addRecipe, showrecipe, displayPersonalRecipeForm };

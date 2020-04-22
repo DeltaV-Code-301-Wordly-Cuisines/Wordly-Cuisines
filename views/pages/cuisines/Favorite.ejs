@@ -14,8 +14,23 @@
       <img src="<%= recipe.image %>"/>
       <p><%= recipe.recipename %></p>
       <p><%= recipe.ingredient %></p>
-  
-  <%})%>    
+      <div class="ratings">
+        <p>So how was the recipe?</p>
+        <form class='rating-levels'>
+          <input type="radio" name='ratings' value='5' id='five' class='ratings' >
+          <label for="five"><i class="fas fa-grin-hearts"></i></label>
+          <input type="radio" name='ratings' value='4' id='four' class='ratings' >
+          <label for="four"><i class="fas fa-grin-alt"></i></label>
+          <input type="radio" name='ratings' value='3' id='three' class='ratings'>
+          <label for="three"><i class="fas fa-smile"></i> </label>
+          <input type="radio" name='ratings' value='2' id='two' class='ratings'>
+          <label for="two"><i class="fas fa-meh"></i></label>
+          <input type="radio" name='ratings' value='1' id='one' class='rating' checked >
+          <label for="one"><i class="fas fa-frown"></i></label>
+        </form>
+      </div> 
+  <%})%>   
+
   </main>
   <footer id="footer">
     <%- include ('../../partials/footer') %>
