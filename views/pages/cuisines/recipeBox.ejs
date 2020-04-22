@@ -9,14 +9,25 @@
 <body>
     <header>
         <%- include ('../../partials/header') %>
+        <h1>you have: <%= count %> recipe saved</h>
     </header>
+   
     <main>
+       
+
         <% recipes.forEach(personalRecipe =>{ %>
             <p><%= personalRecipe.recipeName %></p>
             <p><%= personalRecipe.cuisineType %></p>
             <p><%= personalRecipe.mealType %></p>
             <p><%= personalRecipe.dishType %></p>
             <p><%= personalRecipe.ingredient %></p>
+
+            <form action="/recipebox/<%=personalRecipe.id %>?_method=DELETE" method="POST">
+                <button>DELETE</button>
+            </form>
+
+            <a href="recipebox/<%= personalRecipe.id %>/edit">EDIT</a>
+
         <%})%>   
       
     </main>

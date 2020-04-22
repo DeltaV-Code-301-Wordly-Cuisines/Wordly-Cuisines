@@ -74,6 +74,20 @@ client.query(SQL,[request.params.id])
   });
 }
 
+function deletePersonal(request,response){
+  const SQL = `
+  DELETE FROM personalRecipe
+  WHERE Id = $1
+`;
+client.query(SQL,[request.params.id])
+  .then(() => {
+    response.redirect('/recipebox');
+  })
+  .catch((err) => {
+    console.error(err);
+
+  });
+}
 
 // add recipe to favorite
 
@@ -128,7 +142,7 @@ function addPersonalRecipe(request, response) {
   client.query(SQL, values)
     .then(results => {
       let id = results.rows[0].id;
-      response.redirect(`/recipeBox/${id}`);
+      response.redirect(`/recipeBox`);
 
     })
     .catch((err) => {
@@ -145,7 +159,7 @@ function showPersonalRecipe(request, response) {
       console.log(rows);
       response.render('pages/cuisines/recipeBox', {
         recipes: rows,
-        rowcount: rowCount
+        count: rowCount
       });
 
     })
@@ -202,7 +216,45 @@ client.query(SQL, parameters)
 .catch( error => console.log(error));
 }
 
+
+function editOnePersonalRecipe(request, response) {
+
+  const SQL = `
+  SELECT *
+  FROM personalRecipe
+  WHERE Id = $1
+`;
+client.query(SQL, [request.params.id])
+  .then(results => {
+    const personal = results.rows[0];
+    const viewModel = {
+      personal
+    };
+    response.render('pages/searches/editpersonal',viewModel);
+  })
+}
+
+function updateOnePersonalRecipe(request, response, next) {
+const{recipeName,cuisineType,ingredient,mealType,dishType} = request.body;
+console.log(request.body);
+const SQL = `
+UPDATE personalRecipe SET
+recipeName= $1,
+cuisineType=$2,
+ingredient=$3,
+mealType=$4,
+dishType=$5
+WHERE id = $6;
+`;
+const parameters = [recipeName,cuisineType,ingredient,mealType,dishType, parseInt(request.params.id)];
+client.query(SQL, parameters)
+.then(() => {
+  response.redirect(`/recipebox`);
+})
+.catch( error => console.log(error));
+}
+
 //export modules
 
-module.exports = { getCuisineFromApi, showRecipeDetails, addRecipe, showrecipe, displayPersonalRecipeForm, addPersonalRecipe, showPersonalRecipe, deleteFavorite,updateOneRecipe,editOneRecipe };
+module.exports = { getCuisineFromApi, showRecipeDetails, addRecipe, showrecipe, displayPersonalRecipeForm, addPersonalRecipe, showPersonalRecipe, deleteFavorite,updateOneRecipe,editOneRecipe,deletePersonal,editOnePersonalRecipe,updateOnePersonalRecipe };
 
