@@ -44,12 +44,14 @@
   h3.appDescription{
     font-size:1.5rem;
     font-weight: bolder;
+    color:honeydew;
   }
   p.appDescription{
     font-size:25px;
     margin-left:50px;
     margin-right:50px;
     text-align: center;
+    color:black;
     
   }
   div.create-user-form{
@@ -195,15 +197,15 @@ button.new:hover{
 
  
 }
-div.container{
+/* div.container{
   margin-left:20%;
   margin-right:20%;
-}
+} */
 h3.appDescription{
   font-size:2rem;
   font-weight: bolder;
   text-align:center;
-  color:rgb(121, 10, 131);;
+  color:honeydew;
   /* margin-left:250px; */
 }
 p.appDescription{
@@ -211,7 +213,7 @@ p.appDescription{
    margin-left:50px;
   margin-right:50px; 
   text-align: center;
-  color:black;
+  /* color:black; */
 
   
 }
