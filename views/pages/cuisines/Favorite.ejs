@@ -1,0 +1,24 @@
+  
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+
+    
+  </head>
+<body>
+  <header id="header">
+  </header>
+
+    <% recipes.forEach(recipe =>{ %>
+        <a href="<%= recipe.url %>"> link to the recipe</a>
+        <img src="<%= recipe.image %>"/>
+        <p><%= recipe.recipename %></p>
+        <p><%= recipe.ingredient %></p>
+    
+    <%})%>    
+
+
+  <footer id="footer">
+  </footer>
+</body>
+</html>
