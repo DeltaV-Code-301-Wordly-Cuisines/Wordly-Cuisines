@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-
-    
+    <%- include ('../../partials/head') %>
   </head>
 <body>
   <header id="header">
+    <%- include ('../../partials/header') %>
   </header>
-
+  <main>
     <% recipes.forEach(recipe =>{ %>
        
         <a href="<%= recipe.url %>"> link to the recipe</a>
@@ -22,10 +22,13 @@
             <input type="hidden" name="recipe" value="<%=JSON.stringify(recipe) %>">
             <input type="submit" value="View Recipe Details"/>
            </form>
+
+           <a href="favorite/<%= recipe.id %>/edit">EDIT</a>
     <%})%>    
 
 
   <footer id="footer">
+    <%- include ('../../partials/footer') %>
   </footer>
 </body>
 </html>

@@ -77,6 +77,8 @@ client.query(SQL,[request.params.id])
 
 // add recipe to favorite
 
+// add own recipe- will need a form for this
+
 function addRecipe(request, response) {
 
   const { url, ingredient, recipeName, image } = JSON.parse(request.body.recipe);
@@ -101,7 +103,7 @@ function addRecipe(request, response) {
 
           });
       }else{
-        response.send('the recipe already exist')
+        response.redirect(`/favorite`);
       }
       
     })
@@ -109,6 +111,10 @@ function addRecipe(request, response) {
 
 
 
+
+function displayPersonalRecipeForm(request, response){
+  response.render('pages/searches/createRecipe');
+}
 
 
 //recipe constructor
@@ -124,7 +130,41 @@ function Recipe(recipeData) {
   this.yield = recipeData.recipe.yield;
 }
 
+function editOneRecipe(request, response) {
 
+  const SQL = `
+  SELECT *
+  FROM favoriteRecipe
+  WHERE Id = $1
+`;
+client.query(SQL, [request.params.id])
+  .then(results => {
+    const recipes = results.rows[0];
+    const viewModel = {
+      recipes
+    };
+    response.render('pages/searches/edit',viewModel);
+  })
+}
+
+function updateOneRecipe(request, response, next) {
+const{note,ingredient} = request.body;
+console.log(request.body);
+const SQL = `
+UPDATE favoriteRecipe SET
+note= $1,
+ingredient=$2
+WHERE id = $3;
+`;
+const parameters = [note,ingredient, parseInt(request.params.id)];
+client.query(SQL, parameters)
+.then(() => {
+  response.redirect(`/favorite`);
+})
+.catch( error => console.log(error));
+}
 
 //export modules
-module.exports = { getCuisineFromApi, showRecipeDetails, addRecipe, showrecipe,deleteFavorite };
+module.exports = { getCuisineFromApi, showRecipeDetails, addRecipe, showrecipe,deleteFavorite,updateOneRecipe,editOneRecipe };
+
+

@@ -8,7 +8,7 @@ const cors = require('cors');
 const methodOverride = require('method-override');
 const PORT = process.env.PORT || 3000;
 const cuisineModule = require('./modules/cuisine');
-const {getCuisineFromApi,addRecipe,showRecipeDetails,showrecipe,deleteFavorite} = cuisineModule;
+const {getCuisineFromApi,addRecipe,showRecipeDetails,showrecipe,deleteFavorite,updateOneRecipe, editOneRecipe} = cuisineModule;
 const client =require('./data/database');
 
 
@@ -22,10 +22,37 @@ app.use(express.static('./public'));
 app.use(methodOverride('_method'));
 
 
-//renders recipe buttons form
+
+//renders homepage login for new and existing users
 app.get('/',(request, response) => {
-  response.send('hi');
+  response.render('pages/homepage');
 });
+
+//renders about us page
+app.get('/about',(request, response) => {
+  response.render('pages/aboutTheTeam');
+});
+
+// navigation for favorite recipes
+app.get('/recipe/favorite', (request,response) => {
+  response.render('pages/cuisines/favorites');
+});
+
+
+//nav for recipe box
+app.get('/recipebox', (request,response) => {
+  response.render('pages/cuisines/recipeBox')
+});
+
+// For the new search page
+app.get('/recipes/search', (request,response) => {
+  response.render('pages/searches/new')
+});
+// app.get('/recipes/create', displayPersonalRecipeForm) 
+  
+
+// app.post('/recipes/create',)
+
 
 app.get('/searches/new', (request, response) => {
     response.render('pages/searches/new');
@@ -38,7 +65,8 @@ app.post('/recipe/:recipeName',showRecipeDetails);
 app.post('/favorite',addRecipe);
 app.get('/favorite',showrecipe);
 app.delete('/favorite/:id',deleteFavorite);
-
+app.put('/favorite/:id/edit',updateOneRecipe);
+app.get('/favorite/:id/edit', editOneRecipe);
 
 // establish server
 client.connect()
