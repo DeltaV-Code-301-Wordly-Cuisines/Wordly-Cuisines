@@ -72,30 +72,6 @@
     margin-left:15px;
 }
 
-/* @media only screen and (max-width:1366){
-  body{
-    background: radial-gradient(circle, rgb(8, 41, 40) 0%, rgb(95, 39, 226) 46%, rgb(132, 134, 11) 100%);
-  }
-  
-  h3#buttons{
-    font-size: 25px;
-    color: honeydew;
-    text-align: center;
-    font-weight: bolder;
-    margin:10px;
-  }
-  main#buttons{
-    text-align:center;
-  }
-  button{
-    background-color: rgb(236, 175, 175);
-    padding:10%;
-    font-weight: bolder;
-    margin-left:35%;
-    margin-right:50%;
-  }
-} */
-
 /* desktop */
 @media(min-width:1025px){
 body{
