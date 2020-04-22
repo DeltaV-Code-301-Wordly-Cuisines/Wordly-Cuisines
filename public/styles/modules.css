@@ -1,13 +1,24 @@
 * {
   box-sizing: border-box;
 
+
+}
+
+
  
 }
 
 /* RECIPE FINDER PAGE */
 
 
-
+/* ABOUT US PAGE MOBILE FIRST */
+@media (min-width: 768px){
+.about-container {
+    width: 480px;
+    background-color: ;
+    display: grid;
+    grid-template-columns: 240px 240px;
+    grid-template-rows: 200px 200px 200px;
 /* ADD RECIPE PAGE */
 
 
@@ -86,3 +97,4 @@ img {
 
   font-family: 'Roboto Slab', serif;
 }
+
