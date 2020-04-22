@@ -35,24 +35,23 @@
                             <option value="Kosher">
                         </datalist>
                     </label>
-                    <label for="recipeDetails">
-                        <input type="text" name="title" id="recipeDetails" placeholder="Add the recipe details:"
-                            required>
-                    </label>
+
                     <label for="mealType">
-                        <input list="cuisine-types" id="cuisine-select" name="cuisine-select" placeholder="Select Meal Type" required />
-                        <datalist id="cuisine-types">
+                        <input list="meal-types" id="mealType" name="mealType" placeholder="Select Meal Type"
+                            required />
+                        <datalist id="meal-types">
                             <option value="Breakfast">
                             <option value="Lunch">
                             <option value="Dinner">
                             <option value="Snacks">
-                    </datalist>
+                        </datalist>
                     </label>
 
 
                     <label for="dishType">
-                        <input list="cuisine-types" id="cuisine-select" name="cuisine-select" placeholder="Select Dish Type" required />
-                        <datalist id="cuisine-types">
+                        <input list="dishes" id="dishType" name="dish"
+                            placeholder="Select Dish Type" required />
+                        <datalist id="dishes">
                             <option value="Bread">
                             <option value="Cereal">
                             <option value="Condiment and Sauces">
@@ -69,6 +68,12 @@
                             <option value="Starter">
                             <option value="Sweets">
                         </datalist>
+                    </label>
+
+
+                    <label for="recipeDetails">
+                        <input type="text" name="title" id="recipeDetails" placeholder="Add the recipe details:"
+                            required>
                     </label>
 
                     <input type="submit" value="Add Recipe">

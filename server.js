@@ -9,7 +9,7 @@ const methodOverride = require('method-override');
 const PORT = process.env.PORT || 3000;
 const cuisineModule = require('./modules/cuisine');
 
-const {getCuisineFromApi,addRecipe,showRecipeDetails,showrecipe} = cuisineModule;
+const {getCuisineFromApi,addRecipe,showRecipeDetails,showrecipe, displayPersonalRecipeForm} = cuisineModule;
 
 const client =require('./data/database');
 
@@ -50,10 +50,11 @@ app.get('/recipebox', (request,response) => {
 app.get('/recipes/search', (request,response) => {
   response.render('pages/searches/new')
 });
-// app.get('/recipes/create', displayPersonalRecipeForm) 
-  
 
-// app.post('/recipes/create',)
+
+//creation of new recipe by user
+app.get('/recipes/create', displayPersonalRecipeForm) 
+app.post('/recipes/create', displayPersonalRecipeForm)
 
 
 app.get('/searches/new', (request, response) => {
