@@ -4,13 +4,21 @@
 <head>
     <%- include ('../../partials/head') %>
 </head>
+    
 
 <body>
     <header>
         <%- include ('../../partials/header') %>
     </header>
     <main>
-        
+        <% recipes.forEach(personalRecipe =>{ %>
+            <p><%= personalRecipe.recipeName %></p>
+            <p><%= personalRecipe.cuisineType %></p>
+            <p><%= personalRecipe.mealType %></p>
+            <p><%= personalRecipe.dishType %></p>
+            <p><%= personalRecipe.ingredient %></p>
+        <%})%>   
+      
     </main>
     <footer>
         <%- include ('../../partials/footer') %>

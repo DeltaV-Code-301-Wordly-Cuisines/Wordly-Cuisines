@@ -84,19 +84,19 @@ function addRecipe(request, response) {
       const values = [url, ingredient, recipeName, image];
 
       // POST - REDIRECT - GET
-      if (searchResults.rowCount < 1 ) {
+      if (searchResults.rowCount < 1) {
         client.query(SQL, values)
-            .then(results=>{
-              response.redirect(`/favorite`);
-            })
+          .then(results => {
+            response.redirect(`/favorite`);
+          })
           .catch((err) => {
             console.error(err);
 
           });
-      }else{
+      } else {
         response.send('the recipe already exist')
       }
-      
+
     })
 }
 
@@ -125,8 +125,46 @@ function showrecipe(request, response) {
 
 
 //handler to create recipe form
-function displayPersonalRecipeForm (request, response) {
+function displayPersonalRecipeForm(request, response) {
   response.render('pages/cuisines/createRecipe');
+}
+
+// recipe handler for adding personalRecipe
+function addPersonalRecipe(request, response) {
+  const { recipeName, image, cuisineType, ingredient, mealType, dishType } = request.body;
+  const SQL = `
+    INSERT INTO personalRecipe ( recipeName, image, cuisineType, ingredient, mealType, dishType )
+    VALUES ($1, $2, $3, $4, $5, $6)
+    RETURNING id;
+  `;
+  const values = [recipeName, image, cuisineType, ingredient, mealType, dishType];
+  client.query(SQL, values)
+    .then(results => {
+      let id = results.rows[0].id;
+      response.redirect(`/recipeBox/${id}`);
+
+    })
+    .catch((err) => {
+      console.error(err);
+
+    });
+}
+function showPersonalRecipe(request, response) {
+
+  const SQL = ' SELECT *FROM personalRecipe ; ';
+  client.query(SQL)
+    .then(results => {
+      const { rowCount, rows } = results;
+      console.log(rows);
+      response.render('pages/cuisines/recipeBox', {
+        recipes: rows,
+        rowcount: rowCount
+      });
+
+    })
+    .catch((err) => {
+      console.error(err);
+    });
 }
 
 
@@ -146,4 +184,4 @@ function Recipe(recipeData) {
 
 
 //export modules
-module.exports = { getCuisineFromApi, getNutritionDetail, showRecipeDetails, addRecipe, showrecipe, displayPersonalRecipeForm };
+module.exports = { getCuisineFromApi, getNutritionDetail, showRecipeDetails, addRecipe, showrecipe, displayPersonalRecipeForm, addPersonalRecipe, showPersonalRecipe };
