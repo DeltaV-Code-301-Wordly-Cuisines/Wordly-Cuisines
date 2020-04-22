@@ -8,7 +8,7 @@ const cors = require('cors');
 const methodOverride = require('method-override');
 const PORT = process.env.PORT || 3000;
 const cuisineModule = require('./modules/cuisine');
-const {getCuisineFromApi,addRecipe,showRecipeDetails,showrecipe,deleteFavorit} = cuisineModule;
+const {getCuisineFromApi,addRecipe,showRecipeDetails,showrecipe,deleteFavorite} = cuisineModule;
 const client =require('./data/database');
 
 
@@ -37,7 +37,7 @@ app.post('/recipe/:recipeName',showRecipeDetails);
 // app.post('/favoriteDaital/:recipeName',showRecipeDetails);
 app.post('/favorite',addRecipe);
 app.get('/favorite',showrecipe);
-app.delete('/favorite/:id',deleteFavorit);
+app.delete('/favorite/:id',deleteFavorite);
 
 
 // establish server

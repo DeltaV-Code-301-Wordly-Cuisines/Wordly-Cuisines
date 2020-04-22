@@ -59,7 +59,7 @@ function showrecipe(request, response) {
 }
 
 //delete recipe
-function deleteFavorit(request,response){
+function deleteFavorite(request,response){
   const SQL = `
   DELETE FROM favoriteRecipe
   WHERE Id = $1
@@ -127,4 +127,4 @@ function Recipe(recipeData) {
 
 
 //export modules
-module.exports = { getCuisineFromApi, showRecipeDetails, addRecipe, showrecipe,deleteFavorit };
+module.exports = { getCuisineFromApi, showRecipeDetails, addRecipe, showrecipe,deleteFavorite };
