@@ -10,6 +10,7 @@
   </header>
   <main>
     <% recipes.forEach(recipe =>{ %>
+
       <a href="<%= recipe.url %>"> link to the recipe</a>
       <img src="<%= recipe.image %>"/>
       <p><%= recipe.recipename %></p>
@@ -29,6 +30,13 @@
           <label for="one"><i class="fas fa-frown"></i></label>
         </form>
       </div> 
+       <form action="/recipe/<%= recipe.recipeName %>" method="POST">
+            <input type="hidden" name="recipe" value="<%=JSON.stringify(recipe) %>">
+            <input type="submit" value="View Recipe Details"/>
+           </form>
+
+           <a href="favorite/<%= recipe.id %>/edit">EDIT</a>
+
   <%})%>   
 
   </main>

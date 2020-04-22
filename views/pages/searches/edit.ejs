@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+</head>
+
+<body>
+
+    <main>
+
+
+        <section class="create-view container">
+            <h2 class="view-title">Edit recipe <%= recipes.id %></h2>
+            <form id="update-form" action="/favorite/<%= recipes.id %>/edit?_method=PUT" method="post">
+                <input type="text" name="ingredient" value="<%= recipes.ingredient %>" placeholder="ingredient">
+                <textarea id="note" name="note" rows="4" cols="50">ADD YOUR NOTE</textarea>
+                <button type="submit">Update Note</button>
+            </form>
+        </section>
+
+    </main>
+</body>
+
+</html>

@@ -22,7 +22,8 @@ id SERIAL PRIMARY KEY,
 recipeName VARCHAR(500),
 image VARCHAR(500),
 url VARCHAR(500),
-ingredient VARCHAR(500)
+ingredient VARCHAR(500),
+note VARCHAR(1000)
 );
 
 DROP TABLE IF EXISTS personalRecipe;
