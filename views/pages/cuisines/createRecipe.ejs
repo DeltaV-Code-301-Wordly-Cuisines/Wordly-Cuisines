@@ -12,13 +12,13 @@
     <main>
         <div class="container">
             <div class="recipe-creation-form">
-                <form action="" method="POST">
-                    <label for="recipe-title">
-                        <input type="text" name="title" id="recipeTitle" placeholder="Recipe Title" required>
+                <form action="/recipeBox" method="POST">
+                    <label for="recipeName">
+                        <input type="text" name="recipeName" id="recipeName" placeholder="Recipe Title" required>
                     </label>
 
                     <label for="cuisine-select">
-                        <input list="cuisine-types" id="cuisine-select" name="cuisine-select"
+                        <input list="cuisine-types" id="cuisineType" name="cuisineType"
                             placeholder="Select/Add Your Cuisine" required />
                         <datalist id="cuisine-types">
                             <option value="American">
@@ -49,7 +49,7 @@
 
 
                     <label for="dishType">
-                        <input list="dishes" id="dishType" name="dish"
+                        <input list="dishes" id="dishType" name="dishType"
                             placeholder="Select Dish Type" required />
                         <datalist id="dishes">
                             <option value="Bread">
@@ -72,7 +72,7 @@
 
 
                     <label for="recipeDetails">
-                        <input type="text" name="title" id="recipeDetails" placeholder="Add the recipe details:"
+                        <input type="text" name="ingredient" id="recipeDetails" placeholder="Add the recipe details:"
                             required>
                     </label>
 

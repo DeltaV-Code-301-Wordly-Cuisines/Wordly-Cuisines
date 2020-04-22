@@ -5,25 +5,25 @@
 
 
 /* RATING STYLING */
-/* .rating-levels {
+.rating-levels {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-around;
   }
   
-  input{
+ .rating-levels input{
     display: none;
   }
   
-  i {
+.rating-levels   i  {
     transition: five .3s;
   }
   
-  i:hover {
+ .rating-levels i:hover {
     transform: scale(1.1) rotate(5deg);
     cursor: pointer;
   }
   
   .ratings :checked ~ label {
     color: pink;
-  } */
+  }
