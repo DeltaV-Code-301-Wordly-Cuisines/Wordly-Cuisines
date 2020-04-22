@@ -9,12 +9,14 @@
     <header>
         <%- include ('../partials/header') %>
     </header>
+    <br>
     <main>
 
         <div class="container">
+            <br>
             <div class="appDescription">
-                <h3>How to use Worldly Cuisines</h3>
-                <p>
+                <h3 class="appDescription">How to use Worldly Cuisines</h3>
+                <p class="appDescription">
                     Hello and welcome to your new favorite app to browse, favorite and create recipes! A great starting
                     point would be to take a moment and explore the site, there are so many cuisines to choose from by
                     heading to our recipe finder page.
@@ -28,8 +30,7 @@
                     with us!
                 </p>
             </div>
-
-
+    <br>
             <div class="create-user-form">
                 <form action="" method="POST">
                     <h2>New here? Let's discover something new!</h2>
@@ -38,39 +39,25 @@
                         <span>Name</span>
                         <input type="text" />
                     </label>
+                    <br>
                     <label for="email">
                         <span>Email</span>
                         <input type="email" />
                     </label>
+                    <br>
                     <label for="passwor">
                         <span>Password</span>
                         <input type="password" />
                     </label>
                     <p>Forget your password? No Problem!</p>
-                    <button type="button" class="submit">Create an Account</button>
-                    <button type="button" class="fb-btn">Connect with <span>Facebook</span></button>
+                    <button class="create-user-form" type="button" class="submit">Create an Account</button>
+                    <button class="create-user-form-fb" type="button" class="fb-btn">Connect with <span>Facebook</span></button>
             </div>
-
         </div>
-
         </form>
-
-
-
-
-
-
-
-
         </div>
-
-
-
-
-
-
-
     </main>
+    <br>
     <footer>
         <%- include ('../partials/footer') %>
     </footer>

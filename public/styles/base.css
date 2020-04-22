@@ -6,6 +6,7 @@
 
 /* mobile */
 @media(max-width:767px){
+  /* new search */
   main#buttons.contain{
     display: grid;
     grid-template-columns: auto;
@@ -26,7 +27,7 @@
   main#buttons{
     text-align:center;
   }
-  button{
+  button.new{
     background-color: rgb(236, 175, 175);
     padding:10%;
     font-weight: bolder;
@@ -35,12 +36,56 @@
     text-align: center;
     padding-left:20%;
     padding-right:20%;
-
+  }
+  /* homepage */
+  div.appDescription{
+    
+  }
+  h3.appDescription{
+    font-size:1.5rem;
+    font-weight: bolder;
+  }
+  p.appDescription{
+    font-size:25px;
+    margin-left:50px;
+    margin-right:50px;
+    text-align: center;
+    
+  }
+  div.create-user-form{
+    text-align:center;
+    color:rgb(204, 197, 203);
+    font-size:20px;
+  }
+  button.create-user-form{
+    padding-top:10px;
+    padding-bottom:10px;
+    font-weight: bolder;
+    background: linear-gradient(90deg, rgba(239,51,169,1) 0%, rgba(214,218,11,1) 50%, rgba(0,212,255,1) 100%);
+  }
+  button.create-user-form-fb{
+    padding-top:10px;
+    padding-bottom:10px;
+    background-color:rgb(34, 34, 238);
+    color:honeydew;
+    font-weight:bolder;
   }
 }
 
+/* recipe show */
+main#main-content{
+  display:inline-flexbox;
+
+}
+img{
+  width:100px;
+  height:100px;
+}
+
+
 /* tablet */
 @media(min-width:768px){
+/* new search */
   main#buttons.contain{
     display: grid;
     grid-template-columns: 33%33%33% ;
@@ -62,7 +107,7 @@
   main#buttons{
     text-align:center;
   }
-  button{
+  button.new{
     background-color: rgb(236, 175, 175);
     padding-bottom:25%;
     padding-top:15%;
@@ -70,31 +115,48 @@
     font-size:2rem;
     margin-bottom:15%;
     margin-left:15px;
+  }
+
+/* homepage */
+
+
+h3.appDescription{
+  font-size:2rem;
+  font-weight: bolder;
+  text-align:center;
+  color:rgb(255, 255, 255);
+  /* margin-left:250px; */
+}
+p.appDescription{
+  font-size:25px;
+   margin-left:50px;
+  margin-right:50px; 
+  text-align: center;
+  color:honeydew;
+
+  
+}
+div.create-user-form{
+  text-align:center;
+  color:rgb(204, 197, 203);
+  font-size:20px;
+}
+button.create-user-form{
+  padding-top:10px;
+  padding-bottom:10px;
+  font-weight: bolder;
+  background: linear-gradient(90deg, rgba(239,51,169,1) 0%, rgba(214,218,11,1) 50%, rgba(0,212,255,1) 100%);
+}
+button.create-user-form-fb{
+  padding-top:10px;
+  padding-bottom:10px;
+  background-color:rgb(34, 34, 238);
+  color:honeydew;
+  font-weight:bolder;
 }
 
-/* @media only screen and (max-width:1366){
-  body{
-    background: radial-gradient(circle, rgb(8, 41, 40) 0%, rgb(95, 39, 226) 46%, rgb(132, 134, 11) 100%);
-  }
-  
-  h3#buttons{
-    font-size: 25px;
-    color: honeydew;
-    text-align: center;
-    font-weight: bolder;
-    margin:10px;
-  }
-  main#buttons{
-    text-align:center;
-  }
-  button{
-    background-color: rgb(236, 175, 175);
-    padding:10%;
-    font-weight: bolder;
-    margin-left:35%;
-    margin-right:50%;
-  }
-} */
+
+}
 
 /* desktop */
 @media(min-width:1025px){
@@ -103,7 +165,7 @@ body{
 }
 
 h3#buttons{
-  font-size:1000%;
+  font-size:2rem;
   color: rgb(121, 10, 131);
   text-align: center;
   font-weight: bolder;
@@ -114,7 +176,7 @@ main#buttons{
 
 }
 
-button{
+button.new{
   
   background-color: rgb(236, 175, 175);
   padding:50px;
@@ -125,7 +187,49 @@ button{
   text-align: center;
   
 }
-button:hover{
+button.new:hover{
   background-color:purple;
   color:honeydew;
+}
+/* homepage */
+
+ 
+}
+div.container{
+  margin-left:20%;
+  margin-right:20%;
+}
+h3.appDescription{
+  font-size:2rem;
+  font-weight: bolder;
+  text-align:center;
+  color:rgb(121, 10, 131);;
+  /* margin-left:250px; */
+}
+p.appDescription{
+  font-size:25px;
+   margin-left:50px;
+  margin-right:50px; 
+  text-align: center;
+  color:black;
+
+  
+}
+div.create-user-form{
+  text-align:center;
+  color:black;
+  font-size:20px;
+}
+button.create-user-form{
+  padding-top:10px;
+  padding-bottom:10px;
+  font-weight: bolder;
+  background: linear-gradient(90deg, rgba(239,51,169,1) 0%, rgba(214,218,11,1) 50%, rgba(0,212,255,1) 100%);
+}
+button.create-user-form-fb{
+  padding-top:10px;
+  padding-bottom:10px;
+  background-color:rgb(34, 34, 238);
+  color:honeydew;
+  font-weight:bolder;
 }
