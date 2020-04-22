@@ -25,3 +25,14 @@ url VARCHAR(500),
 ingredient VARCHAR(500),
 note VARCHAR(1000)
 );
+
+DROP TABLE IF EXISTS personalRecipe;
+CREATE TABLE IF NOT EXISTS personalRecipe(
+id SERIAL PRIMARY KEY,
+recipeName VARCHAR(500),
+image VARCHAR(500),
+cuisineType VARCHAR(5000),
+ingredient VARCHAR(500),
+mealType VARCHAR(5000),
+dishType VARCHAR(5000)
+);

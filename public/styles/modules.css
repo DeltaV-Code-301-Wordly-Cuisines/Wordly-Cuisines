@@ -1,0 +1,29 @@
+
+
+
+
+
+
+/* RATING STYLING */
+.rating-levels {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+  }
+  
+ .rating-levels input{
+    display: none;
+  }
+  
+.rating-levels   i  {
+    transition: five .3s;
+  }
+  
+ .rating-levels i:hover {
+    transform: scale(1.1) rotate(5deg);
+    cursor: pointer;
+  }
+  
+  .ratings :checked ~ label {
+    color: pink;
+  }

@@ -1,0 +1,21 @@
+
+
+/*----------------- ---------HEADER STYLING---------------------------------- */
+header {
+    background-color: aliceblue;
+    width: auto;
+    height: 100px;
+}
+nav {
+    background-color: blueviolet;
+    
+}
+
+/*------------------------------------------- FOOTER STYLING -----------------------*/
+footer {
+    height: 150px;
+      background: rgb(255, 252, 252);
+      width: 100%;
+      bottom: 0;
+      
+  }
