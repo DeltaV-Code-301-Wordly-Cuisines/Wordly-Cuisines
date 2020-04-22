@@ -2,17 +2,14 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-
-    
+    <%- include ('../../partials/head') %>
   </head>
 <body>
   <header id="header">
-
-
-    
+    <%- include ('../../partials/header') %>
   </header>
-  <main id="main-content">
 
+  <main id="main-content">
     <% recipes.forEach(recipe => {%>
     <a href="<%= recipe.url %>"> recipe</a>
     <img src="<%= recipe.image %>"/>
@@ -23,22 +20,17 @@
      <input type="hidden" name="recipe" value="<%=JSON.stringify(recipe) %>">
      <input type="submit" value="View Recipe Details"/>
     </form>
-
     <form action="/favorite" method='POST'>
       <input type="hidden" name="recipe" value="<%=JSON.stringify(recipe) %>">
       <input type="text" name="username" />
       <input type="submit" name="favorite" value="Add To Favorite">
     </form>
-
-  
     <% }) %>
   
     
   </main>
   <footer id="footer">
-
-   
-
+    <%- include ('../../partials/footer') %>
   </footer>
 </body>
 </html>
