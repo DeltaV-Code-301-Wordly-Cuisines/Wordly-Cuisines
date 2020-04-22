@@ -30,14 +30,20 @@ app.get('/',(request, response) => {
   response.render('pages/homepage');
 });
 
+//renders about us page
+app.get('/about',(request, response) => {
+  response.render('pages/aboutTheTeam');
+});
+
+
 // For the nav bar?
 app.get('/recipes/search', (request,response) => {
   response.render('pages/searches/new')
 });
-app.get('/recipes/create', displayPersonalRecipeForm) 
+// app.get('/recipes/create', displayPersonalRecipeForm) 
   
 
-app.post('/recipes/create',)
+// app.post('/recipes/create',)
 
 
 
