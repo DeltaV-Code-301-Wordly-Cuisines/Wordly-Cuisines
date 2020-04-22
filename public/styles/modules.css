@@ -1,29 +1,17 @@
+* {
+  box-sizing: border-box;
+}
 
 
 
 
+/* ABOUT US PAGE MOBILE FIRST */
+@media (min-width: 768px){
+.about-container {
+    width: 480px;
+    background-color: ;
+    display: grid;
+    grid-template-columns: 240px 240px;
+    grid-template-rows: 200px 200px 200px;
 
-
-/* RATING STYLING */
-.rating-levels {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-around;
-  }
-  
- .rating-levels input{
-    display: none;
-  }
-  
-.rating-levels   i  {
-    transition: five .3s;
-  }
-  
- .rating-levels i:hover {
-    transform: scale(1.1) rotate(5deg);
-    cursor: pointer;
-  }
-  
-  .ratings :checked ~ label {
-    color: pink;
-  }
+}
