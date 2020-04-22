@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-
-    
+    <%- include ('../../partials/head') %>
   </head>
 <body>
   <header id="header">
-
-
-    
+    <%- include ('../../partials/header') %>
   </header>
   
     <main id="main-content">
@@ -19,14 +16,13 @@
             <p><%= recipe.cuisineType %></p>
             <p><%= recipe.yield %></p>
             <p><%= recipe.url %></p>
-            
             <% }) %>
     </section>
-   
-
-
   </main>
   </body>
+  <footer>
+    <%- include ('../../partials/footer') %>
+  </footer>
   
    
   <footer id="footer">   

@@ -35,8 +35,18 @@ app.get('/about',(request, response) => {
   response.render('pages/aboutTheTeam');
 });
 
+// navigation for favorite recipes
+app.get('/recipe/favorite', (request,response) => {
+  response.render('pages/cuisines/favorites');
+});
 
-// For the nav bar?
+
+//nav for recipe box
+app.get('/recipebox', (request,response) => {
+  response.render('pages/cuisines/recipeBox')
+});
+
+// For the new search page
 app.get('/recipes/search', (request,response) => {
   response.render('pages/searches/new')
 });
@@ -44,8 +54,6 @@ app.get('/recipes/search', (request,response) => {
   
 
 // app.post('/recipes/create',)
-
-
 
 
 app.get('/searches/new', (request, response) => {

@@ -2,23 +2,23 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-
-    
+    <%- include ('../../partials/head') %>
   </head>
 <body>
   <header id="header">
+    <%- include ('../../partials/header') %>
   </header>
-
+  <main>
     <% recipes.forEach(recipe =>{ %>
-        <a href="<%= recipe.url %>"> link to the recipe</a>
-        <img src="<%= recipe.image %>"/>
-        <p><%= recipe.recipename %></p>
-        <p><%= recipe.ingredient %></p>
-    
-    <%})%>    
-
-
+      <a href="<%= recipe.url %>"> link to the recipe</a>
+      <img src="<%= recipe.image %>"/>
+      <p><%= recipe.recipename %></p>
+      <p><%= recipe.ingredient %></p>
+  
+  <%})%>    
+  </main>
   <footer id="footer">
+    <%- include ('../../partials/footer') %>
   </footer>
 </body>
 </html>
