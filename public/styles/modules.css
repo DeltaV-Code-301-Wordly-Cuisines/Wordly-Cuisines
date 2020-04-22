@@ -1,29 +1,88 @@
+* {
+  box-sizing: border-box;
+
+ 
+}
+
+/* RECIPE FINDER PAGE */
 
 
 
+/* ADD RECIPE PAGE */
 
 
+/* FAVORITE RECIPE */
 
-/* RATING STYLING */
-.rating-levels {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-around;
-  }
+
+/* RECIPE BOX PAGE */
+
+/* ABOUT US PAGE MOBILE FIRST */
+.about-container {
+    width: 480px;
+    background-color:honeydew;
+    display: grid;
+    grid-template-columns: 480px;
+    grid-template-rows: 50px 140px 275px 100px 250px 100px 250px;
+}
+.heading {
+  grid-row: 1;
+  margin-top: 15px;
+  font-family: 'DM Serif Display', serif;
+  font-weight: bold;
+  font-size: 45px;
   
- .rating-levels input{
-    display: none;
-  }
-  
-.rating-levels   i  {
-    transition: five .3s;
-  }
-  
- .rating-levels i:hover {
-    transform: scale(1.1) rotate(5deg);
-    cursor: pointer;
-  }
-  
-  .ratings :checked ~ label {
-    color: pink;
-  }
+}
+img {
+  border-radius: 50px;
+  border:5px solid white;
+}
+.sihem {
+  grid-row: 2;
+  padding:30px;
+}
+.sihem-name-bio {
+  background-color: rgb(151, 233, 151);
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  grid-row: 3;
+  width: 350px;
+  margin: 0 auto;
+  padding: 15px;
+  text-align: center;
+  margin-bottom: 10px;
+
+  font-family: 'Roboto Slab', serif;
+}
+.james {
+  grid-row: 4;
+}
+.james-name-bio {
+  background-color: rgb(151, 233, 151);
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  grid-row: 5;
+  width: 360px;
+  margin: 0 auto;
+  padding: 15px;
+  text-align: center;
+  margin-bottom: 10px;
+
+  font-family: 'Roboto Slab', serif;
+}
+.marie {
+  grid-row: 6;
+}
+.marie-name-bio {
+ 
+  background-color: rgb(151, 233, 151);
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  grid-row: 7;
+  width: 360px;
+  margin: 0 auto;
+  padding:15px;
+  text-align: center;
+  margin-bottom: 10px;
+
+  font-family: 'Roboto Slab', serif;
+}
