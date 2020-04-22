@@ -30,45 +30,53 @@ function getCuisineFromApi(request, response, next) {
 }
 
 // recipe detail handler
-function getNutritionDetail(request, response) {
 
-  const SQL = `
-    SELECT ingredient,calories, recipeName, image 
-    FROM cuisine
-    WHERE id = $1
-    LIMIT 1;
-  `;
+function showRecipeDetails(request, response) {
+  response.render('pages/cuisines/details', { recipe: JSON.parse(request.body.recipe) });
+}
 
-  client.query(SQL, [request.params.id])
+
+
+// favorited recipe handler
+
+// get recipe from database
+function showrecipe(request, response) {
+
+  const SQL = ' SELECT *FROM favoriteRecipe ; ';
+
+  client.query(SQL)
     .then(results => {
-      const { rows } = results;
-
-      response.render('pages/searches/details', {
-        recipe: rows[0]
+      const { rowCount, rows } = results;
+      response.render('pages/cuisines/favorite', {
+        recipes: rows,
+        rowcount: rowCount
       });
 
     })
     .catch((err) => {
       console.error(err);
-    })
+    });
+}
+
+//delete recipe
+function deleteFavorit(request,response){
+  const SQL = `
+  DELETE FROM favoriteRecipe
+  WHERE Id = $1
+`;
+client.query(SQL,[request.params.id])
+  .then(() => {
+    response.redirect('/favorite');
+  })
+  .catch((err) => {
+    console.error(err);
+
+  });
 }
 
 
-function showRecipeDetails(request, response) {
-  console.log(request.body);
-  response.render('pages/cuisines/details', { recipe: JSON.parse(request.body.recipe) });
+// add recipe to favorite
 
-}
-
-// favorited recipe handler
-
-// get recipe from database
-
-
-//edit recipe
-
-
-// add own recipe- will need a form for this
 function addRecipe(request, response) {
 
   const { url, ingredient, recipeName, image } = JSON.parse(request.body.recipe);
@@ -99,24 +107,8 @@ function addRecipe(request, response) {
     })
 }
 
-function showrecipe(request, response) {
 
-  const SQL = ' SELECT *FROM favoriteRecipe ; ';
 
-  client.query(SQL)
-    .then(results => {
-      const { rowCount, rows } = results;
-      console.log(rows);
-      response.render('pages/cuisines/favorite', {
-        recipes: rows,
-        rowcount: rowCount
-      });
-
-    })
-    .catch((err) => {
-      console.error(err);
-    });
-}
 
 
 //recipe constructor
@@ -135,4 +127,4 @@ function Recipe(recipeData) {
 
 
 //export modules
-module.exports = { getCuisineFromApi, getNutritionDetail, showRecipeDetails, addRecipe, showrecipe };
+module.exports = { getCuisineFromApi, showRecipeDetails, addRecipe, showrecipe,deleteFavorit };

@@ -15,7 +15,7 @@
                     <p><%= recipe.ingredient %></p>
             </section>
             <section>
-                    <!-- <p><%= recipe.calories %></p> -->
+                    
                     <ul>
                     <% Object.keys(recipe.totalNutrients).forEach(nutritionLabel => { %>
                         <li><%=recipe.totalNutrients[nutritionLabel].label + ': ' +  recipe.totalNutrients[nutritionLabel].quantity.toFixed(1) + recipe.totalNutrients[nutritionLabel].unit %></li>

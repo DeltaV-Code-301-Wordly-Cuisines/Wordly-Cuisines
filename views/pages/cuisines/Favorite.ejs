@@ -10,11 +10,18 @@
   </header>
 
     <% recipes.forEach(recipe =>{ %>
+       
         <a href="<%= recipe.url %>"> link to the recipe</a>
         <img src="<%= recipe.image %>"/>
         <p><%= recipe.recipename %></p>
         <p><%= recipe.ingredient %></p>
-    
+        <form action="/favorite/<%= recipe.id %>?_method=DELETE" method="POST">
+            <button>DELETE</button>
+        </form>
+        <form action="/recipe/<%= recipe.recipeName %>" method="POST">
+            <input type="hidden" name="recipe" value="<%=JSON.stringify(recipe) %>">
+            <input type="submit" value="View Recipe Details"/>
+           </form>
     <%})%>    
 
 
