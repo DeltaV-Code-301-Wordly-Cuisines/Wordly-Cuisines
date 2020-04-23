@@ -16,17 +16,11 @@ img{
 
   box-sizing: border-box;
 
+ 
 
 /* RECIPE FINDER PAGE */
 
-/* ABOUT US PAGE MOBILE FIRST */
-@media (min-width: 768px){
-.about-container {
-    width: 480px;
-    background-color: ;
-    display: grid;
-    grid-template-columns: 240px 240px;
-    grid-template-rows: 200px 200px 200px;
+
 /* ADD RECIPE PAGE */
 
 
@@ -35,15 +29,16 @@ img{
 
 /* RECIPE BOX PAGE */
 
-/* ABOUT US PAGE MOBILE FIRST */
+/* ---------------------------ABOUT US PAGE MOBILE FIRST---------------------------- */
 .about-container {
     width: 480px;
     background-color:honeydew;
     display: grid;
-    grid-template-columns: 480px;
+    grid-template-columns: 240px 240px;
     grid-template-rows: 50px 140px 275px 100px 250px 100px 250px;
 }
 .heading {
+  grid-column: span 2;
   grid-row: 1;
   margin-top: 15px;
   font-family: 'DM Serif Display', serif;
@@ -56,6 +51,7 @@ img {
   border:5px solid white;
 }
 .sihem {
+  grid-column: span 2;
   grid-row: 2;
   padding:30px;
 }
@@ -64,6 +60,7 @@ img {
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   grid-row: 3;
+  grid-column: span 2;
   width: 350px;
   margin: 0 auto;
   padding: 15px;
@@ -73,6 +70,7 @@ img {
   font-family: 'Roboto Slab', serif;
 }
 .james {
+  grid-column: span 2;
   grid-row: 4;
 }
 .james-name-bio {
@@ -80,6 +78,7 @@ img {
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   grid-row: 5;
+  grid-column: span 2;
   width: 360px;
   margin: 0 auto;
   padding: 15px;
@@ -89,6 +88,7 @@ img {
   font-family: 'Roboto Slab', serif;
 }
 .marie {
+  grid-column: span 2;
   grid-row: 6;
 }
 .marie-name-bio {
@@ -97,6 +97,7 @@ img {
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   grid-row: 7;
+  grid-column: span 2;
   width: 360px;
   margin: 0 auto;
   padding:15px;
@@ -104,5 +105,115 @@ img {
   margin-bottom: 10px;
 
   font-family: 'Roboto Slab', serif;
+}
+
+/*------------------- ABOUT TEAM DESKTOP VIEW -----------------------------*/
+@media (min-width: 768px){
+  .about-container {
+    max-width: 1400px;
+      display: grid;
+      grid-template-columns: 500px 500px 500px ;
+      grid-template-rows: 100px 50px 500px 500px 500px;
+  }
+  .heading {
+    
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row: 1;
+    
+  }
+  img {
+   width: 200px;
+   height: 200px;
+   border-radius: 100px;
+
+  }
+  .sihem {
+    text-align: center;
+  
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row: 2;
+    padding-bottom: 20px;
+  }
+  .sihem-name-bio {
+   
+    width: 600px;
+    height:300px;
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row:3;
+    background-color: rgb(151, 159, 233);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
+  }
+
+  /* ANIMATION */
+ .sihem:hover {
+  opacity: 0.5;
+ } 
+ .sihem-name-bio:hover{
+  transform: scale(1.3);
+ }
+/*------------------ JAMES ------------------------------------------------*/
+  .james {
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: 2;;
+    grid-row: 4;                                
+  }
+  .james-name-bio {
+    width: 600px;
+    height:300px;
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row: 4;
+    background-color: rgb(151, 159, 233);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); 
+  }
+  
+  /* ANIMATION */
+ .james:hover {
+  opacity: 0.5;
+ } 
+ .james-name-bio:hover{
+  transform: scale(1.3);
+ }
+
+
+ /*----------------------------- MARIE--------------------------------------------- */
+  .marie {
+    text-align: center;
+    grid-column:1;
+    grid-row: 5;
+  }
+  .marie-name-bio {
+    width: 600px;
+    height:300px;
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row: 5;
+    background-color: rgb(151, 159, 233);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); 
+   
+  }
+ 
+  /* ANIMATION */
+ .marie:hover {
+  opacity: 0.5;
+ } 
+ .marie-name-bio:hover{
+  transform: scale(1.3);
+ }
+ 
+    
+
+
 }
 

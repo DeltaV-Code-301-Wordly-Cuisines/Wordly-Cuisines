@@ -6,17 +6,30 @@
 </head>
 
 <body>
-    <header>
-        <%- include ('../partials/header') %>
-    </header>
-    <br>
-    <main>
+    <div class="menu-wrap">
+        <input type="checkbox" class="toggler">
+        <div class="hamberger">
+            <div></div>
+        </div>
+        <div class="menu">
+            <div>
+                <div>
+                    <ul>
+                        <li><a href='/'>Home</a></li>
+                        <li><a href='/recipes/search'>Recipe Finder</a></li>
+                        <li><a href='/recipes/create'>Add Your Recipe</a></li>
+                        <li><a href='/favorite'>Favorite Recipes</a></li>
+                        <li><a href='/recipebox'>Recipe Box</a></li>
+                        <li><a href='/about'>About the Developers</a></li>
+                    </ul>
+                </div>
+            </div>
 
-        <div class="home-container">
-            <br>
-            <div class="appDescription">
-                <h3 class="appDescription">How to use Worldly Cuisines</h3>
-                <p class="appDescription">
+        </div>
+        <header class="homepage">
+            <div class="container homepage-inside">
+                <h1>Welcome to Worldly Cuisines</h1>
+                <p>
                     Hello and welcome to your new favorite app to browse, favorite and create recipes! A great starting
                     point would be to take a moment and explore the site, there are so many cuisines to choose from by
                     heading to our recipe finder page.
@@ -29,8 +42,16 @@
                     paper that we fear might get lost. There is no better feeling that knowing your recipes are safe
                     with us!
                 </p>
+
             </div>
-    <br>
+        </header>
+
+
+    </div>
+
+
+    <!-- 
+
             <div class="create-user-form">
                 <form action="" method="POST">
                     <h2>New here? Let's discover something new!</h2>
@@ -55,12 +76,11 @@
             </div>
         </div>
         </form>
-        </div>
-    </main>
-    <br>
-    <footer>
-        <%- include ('../partials/footer') %>
-    </footer>
+        </div> -->
+<footer>
+    <%- include ('../partials/footer') %>
+</footer>
+
 </body>
 
 </html>
