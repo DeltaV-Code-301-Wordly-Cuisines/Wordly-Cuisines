@@ -6,27 +6,10 @@
 </head>
 
 <body>
-    <div class="menu-wrap">
-        <input type="checkbox" class="toggler">
-        <div class="hamberger">
-            <div></div>
-        </div>
-        <div class="menu">
-            <div>
-                <div>
-                    <ul>
-                        <li><a href='/'>Home</a></li>
-                        <li><a href='/recipes/search'>Recipe Finder</a></li>
-                        <li><a href='/recipes/create'>Add Your Recipe</a></li>
-                        <li><a href='/favorite'>Favorite Recipes</a></li>
-                        <li><a href='/recipebox'>Recipe Box</a></li>
-                        <li><a href='/about'>About the Developers</a></li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-        <header class="homepage">
+    <header>
+        <%- include ('../partials/header') %>
+    </header>
+        <div class="homepage">
             <div class="container homepage-inside">
                 <h1>Welcome to Worldly Cuisines</h1>
                 <p>
@@ -44,7 +27,7 @@
                 </p>
 
             </div>
-        </header>
+        </div>
 
 
     </div>

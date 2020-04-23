@@ -48,6 +48,66 @@ body {
 }
 
 
+/* NAVIGATION STYLING */
+#page-nav {
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+}
+
+/* Hide Hamburger */
+#page-nav label, #hamburger {
+  display: none;
+}
+
+/* Menu Items */
+#page-nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; 
+}
+#page-nav ul li {
+  display: inline-block;
+  padding: 10px;
+  box-sizing: border-box;
+}
+#page-nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* MOBILE NAV */
+@media screen and (max-width: 768px){
+  /* Show Hamburger */
+  #page-nav label {
+    display: inline-block;
+    color: #fff;
+    background: #a02620;
+    font-style: normal;
+    font-size: 1.2em;
+    padding: 10px;
+  }
+
+  /* Break down menu items into vertical */
+  #page-nav ul li {
+    display: block;
+  }
+  #page-nav ul li {
+    border-top: 1px solid #333;
+  }
+
+  /* Toggle show/hide menu on checkbox click */
+  #page-nav ul {
+    display: none;
+  }
+  #page-nav input:checked ~ ul {
+    display: block;
+  }
+}
+
+
+
+
+
 
 
 
@@ -61,78 +121,36 @@ footer {
   bottom: 0;
   text-align: center;
   padding-top: 5px;
-  animation-name: footer-info;
-  animation-duration: 10s;
+ 
 }
 
-footer a {
-  color: rgb(255, 13, 114);
-  padding-top: 5px;
-}
-a:hover {
-  color: rgb(255, 164, 131);
-}
+
 .info {
   color: black;
   font-weight: bold;
   font-size: 15px;
 }
 
-@keyframes footer-info {
-  0% {
-    background-color: rgb(134, 98, 0);
-  }
-  25% {
-    background-color: rgb(0, 225, 255);
-  }
-  50% {
-    background-color: rgb(75, 75, 238);
-  }
-  100% {
-    background-color: rgb(6, 26, 139);
-  }
-}
 
-/* DESKTOP FOOTER */
+/* -----------------------------------------DESKTOP FOOTER------------------------------------ */
 @media (min-width: 768px){
   footer {
-    height: 80px;
-    background: #1e90ff;
+    height: 100px;
+    background: black;
     position: fixed;
     width: 100%;
     text-align: center;
     padding-top: 5px;
-    animation-name: footer-info;
-    animation-duration: 10s;
+  
 
   }
   
-  footer a {
-    color: rgb(255, 13, 114);
-    padding-top: 5px;
-  }
-  a:hover {
-    color: rgb(255, 164, 131);
-  }
-  .info {
-    color: rgb(253, 253, 253);
-    font-weight: bold;
-    font-size: 15px;
-  }
   
-  @keyframes footer-info {
-    0% {
-      background-color: rgb(54, 0, 0);
-    }
-    25% {
-      background-color: rgb(59, 14, 14);
-    }
-    50% {
-      background-color: rgb(78, 0, 0);
-    }
-    100% {
-      background-color: rgb(54, 9, 9);
-    }
+  .info {
+    color: wheat;
+    font-weight: bold;
+    font-size:10px;
   }
+ 
 
 }
