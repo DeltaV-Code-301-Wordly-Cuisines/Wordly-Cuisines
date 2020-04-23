@@ -15,7 +15,29 @@
       <a href="<%= recipe.url %>"> link to the recipe</a>
       <img src="<%= recipe.image %>"/>
       <p><%= recipe.recipename %></p>
-      <p><%= recipe.ingredient %></p>
+
+      <% const ingredientList = JSON.parse(recipe.ingredient) %>
+      <ul>
+        <% ingredientList.forEach(ingredient => { %>
+            <li><%= ingredient %></li>
+        <% }) %>
+      </ul>
+      <div class="ratings">
+        <p>So how was the recipe?</p>
+        <form action="/favorite/" class='rating-levels'>
+          <input type="radio" name='ratings' value='5' id='five' class='ratings' >
+          <label for="five"><i class="fas fa-grin-hearts"></i></label>
+          <input type="radio" name='ratings' value='4' id='four' class='ratings' >
+          <label for="four"><i class="fas fa-grin-alt"></i></label>
+          <input type="radio" name='ratings' value='3' id='three' class='ratings'>
+          <label for="three"><i class="fas fa-smile"></i> </label>
+          <input type="radio" name='ratings' value='2' id='two' class='ratings'>
+          <label for="two"><i class="fas fa-meh"></i></label>
+          <input type="radio" name='ratings' value='1' id='one' class='rating' checked >
+          <label for="one"><i class="fas fa-frown"></i></label>
+        </form>
+      </div> 
+
       <form action="/favorite/<%= recipe.id %>?_method=DELETE" method="POST">
         <button>DELETE</button>
     </form>
@@ -23,6 +45,26 @@
            <a href="favorite/<%= recipe.id %>/edit">EDIT</a>
 
   <%})%>   
+
+  <form action="/favorite/filter" method='POST'>
+    <select name="healthLabels" >
+          <option value="balanced">vegan</option>
+          <option value="vegetarian">vegetarian</option>
+          <option value="paleo">paleo</option>
+          <option value="dairy-free">dairy-free</option>
+          <option value="gluten-free">gluten-free</option>
+          <option value="wheat-free">wheat-free</option>
+          <option value="high-fiber">fat-free</option>
+          <option value="Snacks">low-sugar</option>
+          <option value="egg-free">egg-free</option>
+          <option value="peanut-free">peanut-free</option>
+          <option value="tree-nut-free">tree-nut-free</option>
+          <option value="soy-free">soy-free</option>
+          <option value="fish-free">fish-free</option>
+          <option value="shellfish-free">shellfish-free</option>
+    </select>
+    <input type="submit" value='filter'>
+</form> 
 
   </main>
   <footer id="footer">
