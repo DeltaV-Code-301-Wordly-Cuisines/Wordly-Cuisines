@@ -177,6 +177,7 @@ function Recipe(recipeData) {
   this.ingredient = recipeData.recipe.ingredientLines;
   this.totalNutrients = recipeData.recipe.totalNutrients;
   this.mealType = recipeData.recipe.mealType;
+  this.healthLabels=recipeData.recipe.healthLabels;
   this.dishtype = recipeData.recipe.dishType;
   this.recipeName = recipeData.recipe.label;
   this.image = recipeData.recipe.image;
