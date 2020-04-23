@@ -1,3 +1,4 @@
+
 *  {
   box-sizing: border-box;
 }
@@ -246,6 +247,7 @@
   /* add your recipe */
   div.create-recipe-container{
     display:grid;
+    
   }
   ul.recipe-creation-form{
     display:grid;
@@ -334,7 +336,6 @@ button.create-user-form-fb{
   font-weight:bolder;
 }
 
-
 }
 
 /* desktop */
@@ -370,10 +371,7 @@ button.new:hover{
   background-color:purple;
   color:honeydew;
 }
-homepage
 
- 
-}
 
 div.home-container{
 
@@ -384,7 +382,7 @@ h3.appDescription{
   font-size:2rem;
   font-weight: bolder;
   text-align:center;
-  color:#1E90FF);;
+  color:#1E90FF;
 
   /* margin-left:250px; */
 }
@@ -415,4 +413,5 @@ button.create-user-form-fb{
   background-color:rgb(34, 34, 238);
   color:honeydew;
   font-weight:bolder;
+}
 }

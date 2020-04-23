@@ -1,94 +1,162 @@
+/*-------------------------------- MOBILE HEADER Styling--------------------------- */
+:root {
+  --primary-color: rgba(29, 28, 1, 0.75);
+  --overlay-color: rgba(255, 232, 101, 0.85);
+  --menu-speed: 0.75s;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.4;
+}
+
+.container {
+  max-width: 960px;
+  margin: auto;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+.homepage {
+  background: var(--primary-color);
+  color: rgb(246, 246, 246);
+  height: 100vh;
+  position: relative;
+}
+.homepage:before {
+  content: '';
+  background: url('/images/homepage.jpg') no-repeat center center/cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.homepage .homepage-inside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+.homepage h1 {
+  font-size: 4rem;
+}
+.homepage p {
+  font-size: 1.3rem;
+}
 
 
-/*----------------- ---------HEADER STYLING---------------------------------- */
-/* mobile */
-@media(max-width:767px){
-    html{
-        display:grid;
-    }
-    h1{
-        font-size:2rem;
-    }
-    header {
-        background-color: aliceblue;
-        width: auto;
-        height: 100px;
-    
-        
-      }
-      nav {
-          background-color: blueviolet;
-        
-      }
+/* NAVIGATION STYLING */
+#page-nav {
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+}
 
-    }
-  
-    a.header{
-        font-size:auto;
-        color:honeydew;
-        
+/* Hide Hamburger */
+#page-nav label, #hamburger {
+  display: none;
+}
+
+/* Menu Items */
+#page-nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; 
+}
+#page-nav ul li {
+  display: inline-block;
+  padding: 10px;
+  box-sizing: border-box;
+}
+#page-nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* MOBILE NAV */
+@media screen and (max-width: 768px){
+  /* Show Hamburger */
+  #page-nav label {
+    display: inline-block;
+    color: #fff;
+    background: #a02620;
+    font-style: normal;
+    font-size: 1.2em;
+    padding: 10px;
   }
-  h1{
-      color:black;
 
+  /* Break down menu items into vertical */
+  #page-nav ul li {
+    display: block;
   }
-  
-  /* tablet */
-  @media(min-width:768px){
-      h1{
-          font-size:2rem;
-      }
-    header {
-        display:grid;
-      background-color: aliceblue;
-      /* width: 250px;
-      float:left; */
-   
- 
-    }
-    nav {
-        background-color: blueviolet;
-        /* width:250px;
-        height:100%%; */
-
-    ;
-  
-      
-    }
-  a.header{
-      color:honeydew;
-      margin-left:10px;
-      font-size: 25px;
-
-  }
-  h1{
-      text-align: center;
-  }
-  
+  #page-nav ul li {
+    border-top: 1px solid #333;
   }
 
-  
-  /* desktop */
-  @media(min-width:1025px){
-      h1{
-          font-size:2rem;
-      }
-    header {
-      background-color: aliceblue;
-      width: auto;
-      height: 5rem;
-    }
-    nav {
-      background-color: blueviolet;
-    }
-  
+  /* Toggle show/hide menu on checkbox click */
+  #page-nav ul {
+    display: none;
   }
-/*------------------------------------------- FOOTER STYLING -----------------------*/
+  #page-nav input:checked ~ ul {
+    display: block;
+  }
+}
+
+
+
+
+
+
+
+
+
+/*------------------------------------------- MOBILE FOOTER STYLING -----------------------*/
 footer {
-    height: 50px;
-      background: rgb(255, 252, 252);
-      width: 100%;
-      bottom: 0;
-      text-align:center;
-      
+ 
+
+  width: 480px;
+  height: 60px;
+  background: #00050a;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+  padding-top: 5px;
+  position:fixed;
+ 
+}
+.footer-text {
+  font-size: 10px;
+}
+
+
+.info {
+  color: aqua;
+  font-weight: bold;
+  font-size: 10px;
+}
+
+
+/* -----------------------------------------DESKTOP FOOTER------------------------------------ */
+@media (min-width: 768px){
+  footer {
+    height: 100px;
+    background: black;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 20px;
   }
+  
+  
+  .info {
+    color: wheat;
+    font-weight: bold;
+    font-size:10px;
+  }
+ 
+
+}
