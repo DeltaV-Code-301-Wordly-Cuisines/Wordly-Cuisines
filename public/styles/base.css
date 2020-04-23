@@ -1,0 +1,250 @@
+
+*  {
+  box-sizing: border-box;
+}
+
+
+
+/* mobile */
+@media(max-width:767px){
+  /* new search */
+  main#buttons.cuisine-container{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 19;
+  }
+  
+  body{
+    background:honeydew;
+    text-align:center;
+  }
+  h3#buttons{
+    font-size: 50px;
+    color: #1E90FF;
+    text-align: center;
+    font-weight: bolder;
+    margin:2rem;
+  }
+  main#buttons{
+    text-align:center;
+  }
+  button.new{
+    background-color: rgb(236, 175, 175);
+    padding:10%;
+    font-weight: bolder;
+    margin-bottom:5px;
+    font-size:2rem;
+    text-align: center;
+    padding-left:20%;
+    padding-right:20%;
+  }
+  /* homepage */
+
+  h3.appDescription{
+    font-size:2rem;
+    font-weight: bolder;
+
+    color:#1E90FF;
+
+  }
+  p.appDescription{
+    font-size:20px;
+    /* margin-left:10px;
+    margin-right:10px; */
+    text-align: center;
+    color:black;
+    
+  }
+  div.create-user-form{
+    text-align:center;
+    color:#1E90FF;
+    font-size:20px;
+  }
+  button.create-user-form{
+    padding-top:10px;
+    padding-bottom:10px;
+    font-weight: bolder;
+    background: linear-gradient(90deg, rgba(239,51,169,1) 0%, rgba(214,218,11,1) 50%, rgba(0,212,255,1) 100%);
+  }
+  button.create-user-form-fb{
+    padding-top:10px;
+    padding-bottom:10px;
+    background-color:rgb(34, 34, 238);
+    color:honeydew;
+    font-weight:bolder;
+  }
+  /* add your recipe */
+  div.create-recipe-container{
+    display:grid;
+    
+  }
+  ul.recipe-creation-form{
+    display:grid;
+  }
+}
+
+/* recipe show */
+main#main-content{
+  margin-top:50px;
+}
+img{
+  width:100px;
+  height:100px;
+}
+
+
+/* tablet */
+@media(min-width:768px){
+/* new search */
+  main#buttons.cuisine-container{
+    display: grid;
+    grid-template-columns: 33%33%33% ;
+    grid-template-rows:12%12%12%12%12%12%;
+    
+  }
+
+  body{
+    background: honeydew;
+  }
+  
+  h3#buttons{
+    font-size: 50px;
+    color: honeydew;
+    text-align: center;
+    font-weight: bolder;
+    margin:10px;
+  }
+  main#buttons{
+    text-align:center;
+  }
+  button.new{
+    background-color: rgb(236, 175, 175);
+    padding-bottom:25%;
+    padding-top:15%;
+    font-weight: bolder;
+    font-size:2rem;
+    margin-bottom:15%;
+    margin-left:15px;
+  }
+
+/* homepage */
+
+
+h3.appDescription{
+  font-size:2rem;
+  font-weight: bolder;
+  text-align:center;
+  color:#1E90FF;
+  /* margin-left:250px; */
+}
+p.appDescription{
+  font-size:25px;
+   /* margin-left:10px;
+  margin-right:10px;  */
+  text-align: center;
+  color:#1E90FF;
+
+  
+}
+div.create-user-form{
+  text-align:center;
+  color:#1E90FF;
+  font-size:20px;
+}
+button.create-user-form{
+  padding-top:10px;
+  padding-bottom:10px;
+  font-weight: bolder;
+  background: linear-gradient(90deg, rgba(239,51,169,1) 0%, rgba(214,218,11,1) 50%, rgba(0,212,255,1) 100%);
+}
+button.create-user-form-fb{
+  padding-top:10px;
+  padding-bottom:10px;
+  background-color:rgb(34, 34, 238);
+  color:honeydew;
+  font-weight:bolder;
+}
+
+
+}
+
+/* desktop */
+@media(min-width:1025px){
+body{
+  background: honeydew;
+}
+
+h3#buttons{
+  font-size:2rem;
+  color: rgb(121, 10, 131);
+  text-align: center;
+  font-weight: bolder;
+
+}
+main#buttons{
+  text-align:center;
+
+}
+
+button.new{
+  
+  background-color: rgb(236, 175, 175);
+  padding:50px;
+  padding-bottom:150px;
+  font-size:300%;
+  font-weight: bolder;
+  margin:2.5%;
+  text-align: center;
+  
+}
+button.new:hover{
+  background-color:purple;
+  color:honeydew;
+}
+/* homepage */
+
+ 
+}
+
+div.home-container{
+
+  margin-left:10%;
+  margin-right:10%;
+} */
+h3.appDescription{
+  font-size:2rem;
+  font-weight: bolder;
+  text-align:center;
+  color:#1E90FF;
+
+  /* margin-left:250px; */
+}
+p.appDescription{
+  font-size:25px;
+   /* margin-left:25px;
+  margin-right:25px;  */
+  text-align: center;
+  color:#1E90FF;
+
+
+  
+}
+div.create-user-form{
+  text-align:center;
+  color:#1E90FF;
+  font-size:20px;
+}
+button.create-user-form{
+  padding-top:10px;
+  padding-bottom:10px;
+  font-weight: bolder;
+  background: linear-gradient(90deg, rgba(239,51,169,1) 0%, rgba(214,218,11,1) 50%, rgba(0,212,255,1) 100%);
+}
+button.create-user-form-fb{
+  padding-top:10px;
+  padding-bottom:10px;
+  background-color:rgb(34, 34, 238);
+  color:honeydew;
+  font-weight:bolder;
+}
+
