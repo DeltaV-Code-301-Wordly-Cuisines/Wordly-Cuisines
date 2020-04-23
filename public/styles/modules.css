@@ -4,6 +4,8 @@
 }
 p{
   font-size:25px;
+  text-align:center;
+  margin: auto;
 }
 a{
   display:grid;
@@ -11,11 +13,14 @@ a{
   margin-top: 19px;
 }
 img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+form{
   text-align:center;
 }
-
-  box-sizing: border-box;
-
  
 
 /* RECIPE FINDER PAGE */
