@@ -75,6 +75,7 @@
   /* add your recipe */
   div.create-recipe-container{
     display:grid;
+    
   }
   ul.recipe-creation-form{
     display:grid;
