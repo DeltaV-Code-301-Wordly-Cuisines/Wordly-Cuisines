@@ -27,8 +27,11 @@ img{
     display: grid;
     grid-template-columns: 240px 240px;
     grid-template-rows: 200px 200px 200px;
+}
 /* ADD RECIPE PAGE */
+.new-search{
 
+}
 
 /* FAVORITE RECIPE */
 
