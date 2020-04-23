@@ -25,7 +25,7 @@ url VARCHAR(500),
 ingredient VARCHAR(500),
 cuisineType VARCHAR(5000),
 note VARCHAR(1000),
-dishType VARCHAR(5000)
+healthLabels VARCHAR(1000)
 );
 
 DROP TABLE IF EXISTS personalRecipe;

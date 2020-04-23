@@ -46,26 +46,24 @@
   <%})%>   
 
   <form action="/favorite/filter" method='POST'>
-      <select name="dishType" >
-          <option value="Bread">
-            <option value="Cereal">
-            <option value="Condiment and Sauces">
-            <option value="Drinks">
-            <option value="Desserts">
-            <option value="Main Course">
-            <option value="Pancake">
-            <option value="Preps">
-            <option value="Preserves">
-            <option value="Salad">
-            <option value="Sandwiches">
-            <option value="Side Dish">
-            <option value="Soup">
-            <option value="Starter">
-            <option value="Sweets">
-                   
-      </select>
-      <input type="submit" value='filter'>
-  </form>
+    <select name="healthLabels" >
+          <option value="balanced">vegan</option>
+          <option value="vegetarian">vegetarian</option>
+          <option value="paleo">paleo</option>
+          <option value="dairy-free">dairy-free</option>
+          <option value="gluten-free">gluten-free</option>
+          <option value="wheat-free">wheat-free</option>
+          <option value="high-fiber">fat-free</option>
+          <option value="Snacks">low-sugar</option>
+          <option value="egg-free">egg-free</option>
+          <option value="peanut-free">peanut-free</option>
+          <option value="tree-nut-free">tree-nut-free</option>
+          <option value="soy-free">soy-free</option>
+          <option value="fish-free">fish-free</option>
+          <option value="shellfish-free">shellfish-free</option>
+    </select>
+    <input type="submit" value='filter'>
+</form> 
 
   </main>
   <footer id="footer">
