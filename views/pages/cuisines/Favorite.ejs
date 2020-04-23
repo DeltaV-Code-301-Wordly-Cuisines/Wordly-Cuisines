@@ -15,7 +15,12 @@
       <a href="<%= recipe.url %>"> link to the recipe</a>
       <img src="<%= recipe.image %>"/>
       <p><%= recipe.recipename %></p>
-      <p><%= recipe.ingredient %></p>
+      <% const ingredientList = JSON.parse(recipe.ingredient) %>
+      <ul>
+        <% ingredientList.forEach(ingredient => { %>
+            <li><%= ingredient %></li>
+        <% }) %>
+      </ul>
       <div class="ratings">
         <p>So how was the recipe?</p>
         <form action="/favorite/" class='rating-levels'>
@@ -39,6 +44,28 @@
            <a href="favorite/<%= recipe.id %>/edit">EDIT</a>
 
   <%})%>   
+
+  <form action="/favorite/filter" method='POST'>
+      <select name="dishType" >
+          <option value="Bread">
+            <option value="Cereal">
+            <option value="Condiment and Sauces">
+            <option value="Drinks">
+            <option value="Desserts">
+            <option value="Main Course">
+            <option value="Pancake">
+            <option value="Preps">
+            <option value="Preserves">
+            <option value="Salad">
+            <option value="Sandwiches">
+            <option value="Side Dish">
+            <option value="Soup">
+            <option value="Starter">
+            <option value="Sweets">
+                   
+      </select>
+      <input type="submit" value='filter'>
+  </form>
 
   </main>
   <footer id="footer">

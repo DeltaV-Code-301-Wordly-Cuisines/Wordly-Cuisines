@@ -94,17 +94,19 @@ client.query(SQL,[request.params.id])
 // add own recipe- will need a form for this
 
 function addRecipe(request, response) {
-
-  const { url, ingredient, recipeName, image } = JSON.parse(request.body.recipe);
+  // console.log(request.body.recipe);
+  const { url, ingredient, recipeName, image ,cuisineType,dishType} = JSON.parse(request.body.recipe);
+  console.log({ url, ingredient });
   const searchQuery = `SELECT * FROM favoriteRecipe WHERE url=$1 `;
   client.query(searchQuery, [url])
     .then(searchResults => {
       const SQL = `
-    INSERT INTO favoriteRecipe ( url, ingredient,  recipeName ,image)
-    VALUES ($1, $2, $3, $4)
+    INSERT INTO favoriteRecipe ( url, ingredient,  recipeName ,image,cuisineType,dishType)
+    VALUES ($1, $2, $3, $4,$5,$6)
     RETURNING id
   `;
-      const values = [url, ingredient, recipeName, image];
+      const values = [url, JSON.stringify(ingredient), recipeName, image,cuisineType[0],dishType];
+      console.log(values);
 
       // POST - REDIRECT - GET
       if (searchResults.rowCount < 1) {
@@ -256,5 +258,37 @@ client.query(SQL, parameters)
 
 //export modules
 
-module.exports = { getCuisineFromApi, showRecipeDetails, addRecipe, showrecipe, displayPersonalRecipeForm, addPersonalRecipe, showPersonalRecipe, deleteFavorite,updateOneRecipe,editOneRecipe,deletePersonal,editOnePersonalRecipe,updateOnePersonalRecipe };
+
+
+function filterFavorite (request,response){
+
+  let dishType = request.body.dishType;
+  const SQL = ` SELECT * FROM favoriteRecipe WHERE dishType=$1`
+
+const param=[dishType];
+
+client.query(SQL,param)
+.then(results =>{
+  response.render('pages/cuisines/Favorite',{
+    recipes: results.rows,
+    rowcount: results.rowCount
+  })
+})
+  .catch((err) => {
+    console.error(err);
+  });
+
+}
+
+
+
+
+
+
+
+
+
+
+
+module.exports = { getCuisineFromApi, showRecipeDetails, addRecipe, showrecipe, displayPersonalRecipeForm, addPersonalRecipe, showPersonalRecipe, deleteFavorite,updateOneRecipe,editOneRecipe,deletePersonal,editOnePersonalRecipe,updateOnePersonalRecipe,filterFavorite };
 

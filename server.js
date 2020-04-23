@@ -9,7 +9,7 @@ const methodOverride = require('method-override');
 const PORT = process.env.PORT || 3000;
 const cuisineModule = require('./modules/cuisine');
 
-const {getCuisineFromApi,addRecipe,showRecipeDetails,showrecipe, displayPersonalRecipeForm, addPersonalRecipe, showPersonalRecipe,deleteFavorite,updateOneRecipe,editOneRecipe,deletePersonal,updateOnePersonalRecipe,editOnePersonalRecipe} = cuisineModule;
+const {getCuisineFromApi,addRecipe,showRecipeDetails,showrecipe, displayPersonalRecipeForm, addPersonalRecipe, showPersonalRecipe,deleteFavorite,updateOneRecipe,editOneRecipe,deletePersonal,updateOnePersonalRecipe,editOnePersonalRecipe,filterFavorite} = cuisineModule;
 
 const client =require('./data/database');
 
@@ -72,6 +72,7 @@ app.put('/recipebox/:id/edit',updateOnePersonalRecipe);
 app.get('/favorite/:id/edit', editOneRecipe);
 app.get('/recipebox/:id/edit',editOnePersonalRecipe);
 app.delete('/recipebox/:id',deletePersonal);
+app.post('/favorite/filter',filterFavorite);
 // establish server
 client.connect()
   .then(() => {
