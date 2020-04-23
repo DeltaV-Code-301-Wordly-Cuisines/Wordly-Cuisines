@@ -4,31 +4,19 @@
 }
 
 
-
 /* mobile */
 @media(max-width:767px){
   /* new search */
-  main#buttons.cuisine-container{
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 19;
-  }
   
   body{
     background:honeydew;
     text-align:center;
   }
-  h3#buttons{
-    font-size: 50px;
-    color: #1E90FF;
-    text-align: center;
-    font-weight: bolder;
-    margin:2rem;
-  }
+
   main#buttons{
     text-align:center;
   }
-  button.new{
+  /* button.new{
     background-color: rgb(236, 175, 175);
     padding:10%;
     font-weight: bolder;
@@ -37,7 +25,190 @@
     text-align: center;
     padding-left:20%;
     padding-right:20%;
+  } */
+  .cuisine-container{
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 240px 240px ;
+    grid-template-rows: 240px   240px  240px  240px  240px  240px  240px  240px  240px  240px;
   }
+
+  button.new-search{
+    background-image: url("/images/th.jpg");
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    color: white ;
+    font-size: 15px ;
+  }
+  #buttons{
+    font-size: 50px;
+    color: #1E90FF;
+    text-align: center;
+    font-weight: bolder;
+    margin:2rem;
+    grid-column: span 1;
+    grid-row: 1;
+  }
+  #american{
+    background-image: linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)), url("/images/GettyImages-489118114_54_990x660.jpg");
+
+    grid-column: 1;
+      grid-row: 2;
+    text-align: center;
+  }
+#asia{
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)), url("/images/asian\ food.jpg");
+
+    grid-column: 2;
+      grid-row: 2;
+}
+#british{
+  background-image:linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)), url("/images/British-Comfort-Foods-Roast-Dinner.jpg");
+  grid-column: 1;
+    grid-row: 3;
+    
+}
+#caribbean{
+  background-image:linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)), url("/images/Image-2.0.0.jpg");
+  grid-column: 2;
+    grid-row: 3;
+  
+}
+
+#central-europe{
+  background-image:linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)), url("/images/Poland_food_110367230.jpg");
+  grid-column: 1;
+    grid-row: 4;
+   
+}
+#chinese{
+  background-image:linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)), url("/images/spicy-sichuan-noodles-thumb-335x335.jpg");
+  grid-column: 2;
+    grid-row: 4;
+  
+}
+
+
+#estern-europe{
+  background-image:linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)), url("/images/Eastern-European-beetroot-soup-9db26926-24d3-4fd5-8740-474c98d5a8a4-0-4368x2912.jpg");
+  grid-column: 1;
+    grid-row: 5;
+   
+}
+#french{
+  background-image:linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)), url("/images/sneci04.jpg");
+  grid-column: 2;
+    grid-row: 5;
+
+}
+
+#indian{
+  background-image:linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)), url("/images/indian-food.jpg");
+
+  grid-column: 1;
+    grid-row: 6;
+    
+}
+#italien{
+  background-image:linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)), url("/images/rsz_lasagna\ \(2\).jpg");
+  grid-column: 2;
+    grid-row: 6;
+  
+}
+#Japanese{
+  background-image:linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)), url("/images/GettyImages-126553802-56a541cb3df78cf772875a68.jpg");
+  grid-column: 1;
+    grid-row: 7;
+  
+}
+
+#Mediterranean{
+  background-image:linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)), url("/images/MediteranneanDiet.jpg");
+  grid-column: 2;
+    grid-row: 7;
+   
+}
+
+#Mexican{
+  background-image:linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)), url("/images/mexicanfood.jpg");
+  grid-column: 1;
+    grid-row: 8;
+   
+}
+#Middle-eastern{
+  background-image:linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)), url("/images/main32283u4.jpg");
+  grid-column: 2;
+    grid-row: 8;
+  
+}
+
+#Nordic{
+  background-image:linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)), url("/images/Scandanavian-Food_Main-1.jpg");
+  grid-column: 1;
+    grid-row: 9;
+   
+}
+#South-American{
+  background-image:linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)), url("/images/Ceviche_Peru_shutterstock-1.jpg");
+  grid-column: 2;
+    grid-row: 9;
+  
+}
+
+#Southeast-Asian{
+  background-image:linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)), url("/images/SE\ Food\ Spring\ Rolls.JPG");
+  grid-column: 1;
+    grid-row: 10;
+    
+}
+
+#kosher{
+  background-image:linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)), url("/images/Screen-shot-2013-01-15-at-12.11.08-PM.png");
+  grid-column: 2;
+  grid-row: 10;
+}
+
+
+
+
+
   /* homepage */
 
   h3.appDescription{
@@ -201,7 +372,7 @@ button.new:hover{
   background-color:purple;
   color:honeydew;
 }
-/* homepage */
+homepage
 
  
 }
