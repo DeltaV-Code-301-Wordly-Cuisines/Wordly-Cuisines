@@ -15,6 +15,7 @@
       <a href="<%= recipe.url %>"> link to the recipe</a>
       <img src="<%= recipe.image %>"/>
       <p><%= recipe.recipename %></p>
+
       <% const ingredientList = JSON.parse(recipe.ingredient) %>
       <ul>
         <% ingredientList.forEach(ingredient => { %>

@@ -10,14 +10,15 @@
         <%- include ('../../partials/header') %>
     </header>
     <main>
-        <div class="container">
+        <div class="create-recipe-container">
             <div class="recipe-creation-form">
                 <form action="/recipeBox" method="POST">
-                    <label for="recipeName">
+                    <ul class="recipe-creation-form">
+                   <li> <label for="recipeName">
                         <input type="text" name="recipeName" id="recipeName" placeholder="Recipe Title" required>
-                    </label>
+                    </label></li>
 
-                    <label for="cuisine-select">
+                   <li> <label for="cuisine-select">
                         <input list="cuisine-types" id="cuisineType" name="cuisineType"
                             placeholder="Select/Add Your Cuisine" required />
                         <datalist id="cuisine-types">
@@ -34,9 +35,9 @@
                             <option value="Japanese">
                             <option value="Kosher">
                         </datalist>
-                    </label>
+                    </label></li>
 
-                    <label for="mealType">
+                    <li><label for="mealType">
                         <input list="meal-types" id="mealType" name="mealType" placeholder="Select Meal Type"
                             required />
                         <datalist id="meal-types">
@@ -45,10 +46,10 @@
                             <option value="Dinner">
                             <option value="Snacks">
                         </datalist>
-                    </label>
+                    </label></li>
 
 
-                    <label for="dishType">
+                   <li> <label for="dishType">
                         <input list="dishes" id="dishType" name="dishType"
                             placeholder="Select Dish Type" required />
                         <datalist id="dishes">
@@ -68,15 +69,16 @@
                             <option value="Starter">
                             <option value="Sweets">
                         </datalist>
-                    </label>
+                    </label></li>
 
 
-                    <label for="recipeDetails">
+                   <li> <label for="recipeDetails">
                         <input type="text" name="ingredient" id="recipeDetails" placeholder="Add the recipe details:"
                             required>
-                    </label>
+                    </label></li>
 
-                    <input type="submit" value="Add Recipe">
+                   <li> <input type="submit" value="Add Recipe"></li>
+                    </ul>
                 </form>
             </div>
 
