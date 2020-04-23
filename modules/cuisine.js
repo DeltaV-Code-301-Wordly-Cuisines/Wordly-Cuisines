@@ -64,14 +64,14 @@ function deleteFavorite(request,response){
   DELETE FROM favoriteRecipe
   WHERE Id = $1
 `;
-client.query(SQL,[request.params.id])
-  .then(() => {
-    response.redirect('/favorite');
-  })
-  .catch((err) => {
-    console.error(err);
+  client.query(SQL,[request.params.id])
+    .then(() => {
+      response.redirect('/favorite');
+    })
+    .catch((err) => {
+      console.error(err);
 
-  });
+    });
 }
 
 function deletePersonal(request,response){
@@ -79,14 +79,14 @@ function deletePersonal(request,response){
   DELETE FROM personalRecipe
   WHERE Id = $1
 `;
-client.query(SQL,[request.params.id])
-  .then(() => {
-    response.redirect('/recipebox');
-  })
-  .catch((err) => {
-    console.error(err);
+  client.query(SQL,[request.params.id])
+    .then(() => {
+      response.redirect('/recipebox');
+    })
+    .catch((err) => {
+      console.error(err);
 
-  });
+    });
 }
 
 // add recipe to favorite
@@ -94,24 +94,26 @@ client.query(SQL,[request.params.id])
 // add own recipe- will need a form for this
 
 function addRecipe(request, response) {
-
-  const { url, ingredient, recipeName, image } = JSON.parse(request.body.recipe);
+  // console.log(request.body.recipe);
+  const { url, ingredient, recipeName, image ,cuisineType,healthLabels} = JSON.parse(request.body.recipe);
+  console.log({ url, ingredient });
   const searchQuery = `SELECT * FROM favoriteRecipe WHERE url=$1 `;
   client.query(searchQuery, [url])
     .then(searchResults => {
       const SQL = `
-    INSERT INTO favoriteRecipe ( url, ingredient,  recipeName ,image)
-    VALUES ($1, $2, $3, $4)
+    INSERT INTO favoriteRecipe ( url, ingredient,  recipeName ,image,cuisineType,healthLabels)
+    VALUES ($1, $2, $3, $4,$5,$6)
     RETURNING id
   `;
-      const values = [url, ingredient, recipeName, image];
+      const values = [url, JSON.stringify(ingredient), recipeName, image,cuisineType[0],healthLabels];
+      console.log(values);
 
       // POST - REDIRECT - GET
       if (searchResults.rowCount < 1) {
         client.query(SQL, values)
-          .then(results => {
-            response.redirect(`/favorite`);
-          })
+          .then(
+            response.redirect(`/favorite`)
+          )
           .catch((err) => {
             console.error(err);
 
@@ -121,7 +123,7 @@ function addRecipe(request, response) {
         response.redirect(`/favorite`);
       }
 
-    })
+    });
 }
 
 
@@ -189,31 +191,31 @@ function editOneRecipe(request, response) {
   FROM favoriteRecipe
   WHERE Id = $1
 `;
-client.query(SQL, [request.params.id])
-  .then(results => {
-    const recipes = results.rows[0];
-    const viewModel = {
-      recipes
-    };
-    response.render('pages/searches/edit',viewModel);
-  })
+  client.query(SQL, [request.params.id])
+    .then(results => {
+      const recipes = results.rows[0];
+      const viewModel = {
+        recipes
+      };
+      response.render('pages/searches/edit',viewModel);
+    });
 }
 
 function updateOneRecipe(request, response, next) {
-const{note,ingredient} = request.body;
-console.log(request.body);
-const SQL = `
+  const{note,ingredient} = request.body;
+  console.log(request.body);
+  const SQL = `
 UPDATE favoriteRecipe SET
 note= $1,
 ingredient=$2
 WHERE id = $3;
 `;
-const parameters = [note,ingredient, parseInt(request.params.id)];
-client.query(SQL, parameters)
-.then(() => {
-  response.redirect(`/favorite`);
-})
-.catch( error => console.log(error));
+  const parameters = [note,ingredient, parseInt(request.params.id)];
+  client.query(SQL, parameters)
+    .then(() => {
+      response.redirect(`/favorite`);
+    })
+    .catch( error => console.log(error));
 }
 
 
@@ -224,20 +226,20 @@ function editOnePersonalRecipe(request, response) {
   FROM personalRecipe
   WHERE Id = $1
 `;
-client.query(SQL, [request.params.id])
-  .then(results => {
-    const personal = results.rows[0];
-    const viewModel = {
-      personal
-    };
-    response.render('pages/searches/editpersonal',viewModel);
-  })
+  client.query(SQL, [request.params.id])
+    .then(results => {
+      const personal = results.rows[0];
+      const viewModel = {
+        personal
+      };
+      response.render('pages/searches/editpersonal',viewModel);
+    })
 }
 
 function updateOnePersonalRecipe(request, response, next) {
-const{recipeName,cuisineType,ingredient,mealType,dishType} = request.body;
-console.log(request.body);
-const SQL = `
+  const{recipeName,cuisineType,ingredient,mealType,dishType} = request.body;
+  console.log(request.body);
+  const SQL = `
 UPDATE personalRecipe SET
 recipeName= $1,
 cuisineType=$2,
@@ -246,15 +248,46 @@ mealType=$4,
 dishType=$5
 WHERE id = $6;
 `;
-const parameters = [recipeName,cuisineType,ingredient,mealType,dishType, parseInt(request.params.id)];
-client.query(SQL, parameters)
-.then(() => {
-  response.redirect(`/recipebox`);
-})
-.catch( error => console.log(error));
+  const parameters = [recipeName,cuisineType,ingredient,mealType,dishType, parseInt(request.params.id)];
+  client.query(SQL, parameters)
+    .then(() => {
+      response.redirect(`/recipebox`);
+    })
+    .catch( error => console.log(error));
 }
 
 //export modules
 
-module.exports = { getCuisineFromApi, showRecipeDetails, addRecipe, showrecipe, displayPersonalRecipeForm, addPersonalRecipe, showPersonalRecipe, deleteFavorite,updateOneRecipe,editOneRecipe,deletePersonal,editOnePersonalRecipe,updateOnePersonalRecipe };
+
+
+function filterFavorite (request,response){
+
+  let healthLabels = request.body.healthLabels;
+  const SQL = ` SELECT * FROM favoriteRecipe WHERE healthLabels=$1`;
+  const param=[healthLabels];
+
+  client.query(SQL,param)
+    .then(results =>{
+      response.render('pages/cuisines/Favorite',{
+        recipes: results.rows,
+        rowcount: results.rowCount
+      });
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+
+}
+
+
+
+
+
+
+
+
+
+
+
+module.exports = { getCuisineFromApi, showRecipeDetails, addRecipe, showrecipe, displayPersonalRecipeForm, addPersonalRecipe, showPersonalRecipe, deleteFavorite,updateOneRecipe,editOneRecipe,deletePersonal,editOnePersonalRecipe,updateOnePersonalRecipe,filterFavorite };
 

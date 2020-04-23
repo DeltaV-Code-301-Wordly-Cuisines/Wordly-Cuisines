@@ -1,13 +1,25 @@
 * {
-  box-sizing: border-box;
 
-
+  box-sizing: border-box;  
+}
+p{
+  font-size:25px;
+}
+a{
+  display:grid;
+  text-align: center;
+  margin-top: 19px;
+}
+img{
+  text-align:center;
 }
 
+  box-sizing: border-box;
 
  
 
 /* RECIPE FINDER PAGE */
+
 
 /* ADD RECIPE PAGE */
 

@@ -72,12 +72,18 @@
     color:honeydew;
     font-weight:bolder;
   }
+  /* add your recipe */
+  div.create-recipe-container{
+    display:grid;
+  }
+  ul.recipe-creation-form{
+    display:grid;
+  }
 }
 
 /* recipe show */
 main#main-content{
-  display:inline-flexbox;
-
+  margin-top:50px;
 }
 img{
   width:100px;

@@ -23,7 +23,9 @@ recipeName VARCHAR(500),
 image VARCHAR(500),
 url VARCHAR(500),
 ingredient VARCHAR(500),
-note VARCHAR(1000)
+cuisineType VARCHAR(5000),
+note VARCHAR(1000),
+healthLabels VARCHAR(1000)
 );
 
 DROP TABLE IF EXISTS personalRecipe;
