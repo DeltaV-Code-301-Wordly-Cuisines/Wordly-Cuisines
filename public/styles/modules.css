@@ -8,10 +8,10 @@
 
 /* ---------------------------ABOUT US PAGE MOBILE FIRST---------------------------- */
 .about-container {
-  width: 480px;
+  width: 667px;
   background-color: honeydew;
   display: grid;
-  grid-template-columns: 480px;
+  grid-template-columns: 667px;
   grid-template-rows: 50px 140px 275px 140px 250px 140px 250px;
 }
 .heading {
@@ -143,7 +143,7 @@
     width: 600px;
     height: 300px;
     text-align: center;
-    grid-column-start: 2;
+    grid-column-start: 3;
     grid-column-end: 5;
     grid-row: 3;
     background-color: rgb(151, 159, 233);
