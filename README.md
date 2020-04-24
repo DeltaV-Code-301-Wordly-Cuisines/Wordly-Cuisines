@@ -33,7 +33,7 @@ Our app Worldly Cuisines will allow a user to search by specified cuisine, for e
 
 
 
-
+## Challenges and Stretch Goals
 
 
 ## Credits and Collaborations
