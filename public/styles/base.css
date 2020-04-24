@@ -329,10 +329,24 @@ span{
 
 
 
-/*favorite */
+/*edit favorite */
+#note{
+  margin-top: 50px;
+  width: 250px;
+}
+#edit-ingredient{
+width: 250px;
+height: 500px;
+}
 
-.favorite-container{
-
+/* details*/
+.nutrient{
+  font-weight: bold;
+}
+/* favorite*/
+.favorite-recipename{
+  color:darkred;
+  font-weight: bold;
 }
 /* desktopview */
 @media(min-width:960px){

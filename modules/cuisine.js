@@ -201,16 +201,17 @@ function editOneRecipe(request, response) {
     });
 }
 
-function updateOneRecipe(request, response, next) {
+function updateOneRecipe(request, response) {
   const{note,ingredient} = request.body;
   console.log(request.body);
+  const ingredientArray=ingredient.split(/\r?\n/);
   const SQL = `
 UPDATE favoriteRecipe SET
 note= $1,
 ingredient=$2
 WHERE id = $3;
 `;
-  const parameters = [note,ingredient, parseInt(request.params.id)];
+  const parameters = [note,JSON.stringify(ingredientArray), parseInt(request.params.id)];
   client.query(SQL, parameters)
     .then(() => {
       response.redirect(`/favorite`);
@@ -233,10 +234,10 @@ function editOnePersonalRecipe(request, response) {
         personal
       };
       response.render('pages/searches/editpersonal',viewModel);
-    })
+    });
 }
 
-function updateOnePersonalRecipe(request, response, next) {
+function updateOnePersonalRecipe(request, response) {
   const{recipeName,cuisineType,ingredient,mealType,dishType} = request.body;
   console.log(request.body);
   const SQL = `

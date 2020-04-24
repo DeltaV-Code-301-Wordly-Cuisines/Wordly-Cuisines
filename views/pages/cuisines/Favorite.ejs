@@ -14,8 +14,9 @@
 <div  class="favorite-container">
       
       <img src="<%= recipe.image %>"/>
+      <p class="favorite-recipename"><%= recipe.recipename %></p>
       <a href="<%= recipe.url %>"> link to the recipe</a>
-      <p><%= recipe.recipename %></p>
+      
 
       <% const ingredientList = JSON.parse(recipe.ingredient) %>
       <ul>
@@ -29,7 +30,7 @@
         <button class="recipebox-delete-button" >DELETE</button>
     </form>
 
-           <a classe ="recipeboxedit-button"  href="favorite/<%= recipe.id %>/edit">EDIT</a>
+           <a class ="recipeboxedit-button"  href="favorite/<%= recipe.id %>/edit">EDIT</a>
   </div>
   <%})%>   
 

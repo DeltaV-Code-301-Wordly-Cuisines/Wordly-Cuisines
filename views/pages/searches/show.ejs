@@ -1,9 +1,10 @@
-  
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <%- include ('../../partials/head') %>
-  </head>
+
+<head>
+  <%- include ('../../partials/head') %>
+</head>
+
 <body>
   <header id="header">
     <%- include ('../../partials/header') %>
@@ -11,25 +12,30 @@
 
   <main id="main-content">
     <% recipes.forEach(recipe => {%>
-    <a href="<%= recipe.url %>"> recipe</a>
-    <img src="<%= recipe.image %>"/>
-    <p><%= recipe.recipeName %></p>
-    <p><%= recipe.cuisineType %></p>
-    <p><%= recipe.yield %></p>
+    <div class="favorite-container">
+    
+    <img src="<%= recipe.image %>" />
+    <p class="favorite-recipename"><%= recipe.recipeName %></p>
+    <a href="<%= recipe.url %>"> Go to Recipe</a>
+    <p>Cuisine Type: <%= recipe.cuisineType %></p>
+    <p>Yield: <%= recipe.yield %></p>
     <form action="/recipe/<%= recipe.recipeName %>" method="POST">
-     <input type="hidden" name="recipe" value="<%=JSON.stringify(recipe) %>">
-     <input type="submit" value="View Recipe Details"/>
+      <input type="hidden" name="recipe" value="<%=JSON.stringify(recipe) %>">
+      <input class="recipebox-delete-button" type="submit" value="Details" />
     </form>
     <form action="/favorite" method='POST'>
       <input type="hidden" name="recipe" value="<%=JSON.stringify(recipe) %>">
-      <input type="submit" name="favorite" value="Add To Favorite">
+      <input class="recipebox-delete-button" type="submit" name="favorite" value="Add Favorite">
+
     </form>
+    </div>
     <% }) %>
-  
-    
+
+
   </main>
   <footer id="footer">
     <%- include ('../../partials/footer') %>
   </footer>
 </body>
+
 </html>
