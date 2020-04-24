@@ -8,26 +8,27 @@
   <header id="header">
     <%- include ('../../partials/header') %>
   </header>
-
+<div class="showFlow">
   <main id="main-content">
     <% recipes.forEach(recipe => {%>
-    <a href="<%= recipe.url %>"> recipe</a>
-    <img src="<%= recipe.image %>"/>
-    <p><%= recipe.recipeName %></p>
-    <p><%= recipe.cuisineType %></p>
-    <p><%= recipe.yield %></p>
-    <form action="/recipe/<%= recipe.recipeName %>" method="POST">
-     <input type="hidden" name="recipe" value="<%=JSON.stringify(recipe) %>">
-     <input type="submit" value="View Recipe Details"/>
+      <section class="showFlow">
+    <a class="showFlow" href="<%= recipe.url %>"> recipe</a>
+    <img class="showFlow" src="<%= recipe.image %>"/>
+    <p class="showFlow"><%= recipe.recipeName %></p>
+    <p class="showFlow"><%= recipe.cuisineType %></p>
+    <p class="showFlow"><%= recipe.yield %></p>
+    <form class="showFlow" action="/recipe/<%= recipe.recipeName %>" method="POST">
+     <input class="showFlow" type="hidden" name="recipe" value="<%=JSON.stringify(recipe) %>">
+     <input class="showFlow" type="submit" value="View Recipe Details"/>
     </form>
-    <form action="/favorite" method='POST'>
-      <input type="hidden" name="recipe" value="<%=JSON.stringify(recipe) %>">
-      <input type="submit" name="favorite" value="Add To Favorite">
+    <form class="showFlow" action="/favorite" method='POST'>
+      <input class="showFlow" type="hidden" name="recipe" value="<%=JSON.stringify(recipe) %>">
+      <input class="showFlow" type="submit" name="favorite" value="Add To Favorite">
     </form>
+     </section>
     <% }) %>
-  
-    
   </main>
+</div>
   <footer id="footer">
     <%- include ('../../partials/footer') %>
   </footer>
