@@ -1,10 +1,4 @@
-/* RECIPE FINDER PAGE */
 
-/* ADD RECIPE PAGE */
-
-/* FAVORITE RECIPE */
-
-/* RECIPE BOX PAGE */
 
 /* ---------------------------ABOUT US PAGE MOBILE FIRST---------------------------- */
 .about-container {
@@ -12,7 +6,7 @@
   background-color: honeydew;
   display: grid;
   grid-template-columns: 480px;
-  grid-template-rows: 50px 140px 275px 140px 250px 140px 250px;
+  grid-template-rows: 50px 140px 300px 140px 300px 140px 300px;
 }
 .heading {
   grid-column: 1;
@@ -28,7 +22,7 @@
   width: 100px;
   height: 100px;
   border-radius: 50px;
-  border: 5px solid white;
+  border: 5px solid rgb(8, 7, 7);
 }
 .sihem {
   grid-column: 1;
@@ -37,38 +31,39 @@
   text-align: center;
 }
 .sihem-name-bio {
-  background-color: rgb(151, 233, 151);
+  background-color: rgb(79, 135, 255);
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   grid-row: 3;
   grid-column: 1;
   width: 250px;
-  height: 230px;
+  height: 290px;
   margin: 0 auto;
   padding: 15px;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom:50pxpx;
   font-family: "Roboto Slab", serif;
 }
 .james-image {
   width: 100px;
   height: 100px;
   border-radius: 50px;
-  border: 5px solid white;
-  margin-left: 190px;
+  border: 5px solid rgb(8, 7, 7);
+  margin-top: 25px;
+  
 }
 .james {
   grid-column: 1;
   grid-row: 4;
 }
 .james-name-bio {
-  background-color: rgb(151, 233, 151);
+  background-color: rgb(79, 135, 255);
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   grid-row: 5;
   grid-column: 1;
   width: 250px;
-  height: 200px;
+  height: 300px;
   margin: 0 auto;
   padding: 15px;
   text-align: center;
@@ -80,26 +75,25 @@
   width: 100px;
   height: 100px;
   border-radius: 50px;
-  border: 5px solid white;
-  margin-left: 190px;
+  border: 5px solid rgb(0, 0, 0);
+  margin-top: 25px;
 }
 .marie {
   grid-column: 1;
   grid-row: 6;
 }
 .marie-name-bio {
-  background-color: rgb(151, 233, 151);
+  background-color: rgb(79, 135, 255);
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   grid-row: 7;
   grid-column: 1;
   width: 250px;
-  height: 220px;
+  height: 300px;
   margin: 0 auto;
   padding: 15px;
   text-align: center;
-  margin-bottom: 10px;
-
+  margin-bottom: 200px;
   font-family: "Roboto Slab", serif;
 }
 
@@ -109,25 +103,31 @@
 
 /*------------------- ABOUT TEAM DESKTOP VIEW -----------------------------*/
 @media (min-width: 768px) {
+  .about-body {
+    background-color: rgb(181, 228, 255);
+  }
   .about-container {
-    background-color: darkturquoise;
     max-width: 1400px;
+    background-color: rgb(177, 204, 255);
+    border-right: 15px solid floralwhite;
     display: grid;
     grid-template-columns: 500px 500px 500px;
-    grid-template-rows: 100px 50px 500px 500px 500px;
+    grid-template-rows: 100px 10px 50px 500px 500px 500px;
+   
   }
   .heading {
-    grid-column-start: 2;
-    grid-column-end: 3;
+    color:black;
+    grid-column-start:2;
+    grid-column-end: 4;
     grid-row: 1;
   }
   .sihem-image {
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     border-radius: 200px;
-    border: 5px;
-    margin-left: initial;
-    margin-right: auto;
+    border: 15px;
+    margin: auto;
+    vertical-align: middle;
   }
 
   .sihem {
@@ -135,13 +135,13 @@
 
     grid-column-start: 1;
     grid-column-end: 2;
-    grid-row: 2;
+    grid-row: 3;
     padding-bottom: 20px;
   }
   .sihem-name-bio {
   
-    width: 600px;
-    height: 300px;
+    width: 800px;
+    height: 400px;
     text-align: center;
     grid-column-start: 2;
     grid-column-end: 5;
@@ -161,8 +161,8 @@
   /*------------------ JAMES ------------------------------------------------*/
   
   .james-image {
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     border-radius: 200px;
     border: 5px;
     margin-top: 15px;
@@ -173,15 +173,15 @@
   .james {
     grid-column-start: 1;
     grid-column-end: 2;
-    grid-row: 4;
+    grid-row: 5;
   }
   .james-name-bio {
     width: 600px;
-    height: 300px;
+    height: 400px;
     text-align: center;
     grid-column-start: 2;
     grid-column-end: 5;
-    grid-row: 4;
+    grid-row: 5;
     background-color: rgb(151, 159, 233);
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
@@ -197,8 +197,8 @@
 
   /*----------------------------- MARIE--------------------------------------------- */
   .marie-image {
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     border-radius: 200px;
     border: 5px;
     margin-top: 15px;
@@ -210,15 +210,15 @@
   
   .marie {
     grid-column: 1;
-    grid-row: 5;
+    grid-row: 6;
   }
   .marie-name-bio {
     width: 600px;
-    height: 300px;
+    height: 400px;
     text-align: center;
     grid-column-start: 2;
     grid-column-end: 5;
-    grid-row: 5;
+    grid-row: 6;
     background-color: rgb(151, 159, 233);
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);

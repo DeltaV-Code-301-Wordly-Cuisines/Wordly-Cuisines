@@ -1,8 +1,6 @@
 'use strict';
-
 const superagent = require('superagent');
 const client = require('../data/database');
-
 function getCuisineFromApi(request, response, next) {
   let url = 'https://api.edamam.com/search';
   superagent.get(url)
@@ -10,12 +8,10 @@ function getCuisineFromApi(request, response, next) {
       app_key: 'ee627180bbfefd66310f27f6647fdeeb',
       app_id: '095f4895',
       q: request.params.cuisineType
-
     })
     .then(cuisineResponse => {
       const recipeData = cuisineResponse.body.hits;
       let recipeResults = recipeData.map(recipe => {
-
         return new Recipe(recipe);
       });
       let viewModel = {
@@ -28,22 +24,14 @@ function getCuisineFromApi(request, response, next) {
       next(err);
     });
 }
-
 // recipe detail handler
-
 function showRecipeDetails(request, response) {
   response.render('pages/cuisines/details', { recipe: JSON.parse(request.body.recipe) });
 }
-
-
-
 // favorited recipe handler
-
 // get recipe from database
 function showrecipe(request, response) {
-
   const SQL = ' SELECT *FROM favoriteRecipe ; ';
-
   client.query(SQL)
     .then(results => {
       const { rowCount, rows } = results;
@@ -51,13 +39,11 @@ function showrecipe(request, response) {
         recipes: rows,
         rowcount: rowCount
       });
-
     })
     .catch((err) => {
       console.error(err);
     });
 }
-
 //delete recipe
 function deleteFavorite(request,response){
   const SQL = `
@@ -70,10 +56,8 @@ function deleteFavorite(request,response){
     })
     .catch((err) => {
       console.error(err);
-
     });
 }
-
 function deletePersonal(request,response){
   const SQL = `
   DELETE FROM personalRecipe
@@ -85,14 +69,10 @@ function deletePersonal(request,response){
     })
     .catch((err) => {
       console.error(err);
-
     });
 }
-
 // add recipe to favorite
-
 // add own recipe- will need a form for this
-
 function addRecipe(request, response) {
   // console.log(request.body.recipe);
   const { url, ingredient, recipeName, image ,cuisineType,healthLabels} = JSON.parse(request.body.recipe);
@@ -107,7 +87,6 @@ function addRecipe(request, response) {
   `;
       const values = [url, JSON.stringify(ingredient), recipeName, image,cuisineType[0],healthLabels];
       console.log(values);
-
       // POST - REDIRECT - GET
       if (searchResults.rowCount < 1) {
         client.query(SQL, values)
@@ -116,22 +95,16 @@ function addRecipe(request, response) {
           )
           .catch((err) => {
             console.error(err);
-
           });
-
       }else{
         response.redirect(`/favorite`);
       }
-
     });
 }
-
-
 //handler to create recipe form
 function displayPersonalRecipeForm(request, response) {
   response.render('pages/cuisines/createRecipe');
 }
-
 // recipe handler for adding personalRecipe
 function addPersonalRecipe(request, response) {
   const { recipeName, image, cuisineType, ingredient, mealType, dishType } = request.body;
@@ -146,13 +119,12 @@ function addPersonalRecipe(request, response) {
       response.redirect(`/recipeBox`)
 
     )
+
     .catch((err) => {
       console.error(err);
-
     });
 }
 function showPersonalRecipe(request, response) {
-
   const SQL = ' SELECT *FROM personalRecipe ; ';
   client.query(SQL)
     .then(results => {
@@ -162,14 +134,11 @@ function showPersonalRecipe(request, response) {
         recipes: rows,
         count: rowCount
       });
-
     })
     .catch((err) => {
       console.error(err);
     });
 }
-
-
 //recipe constructor
 function Recipe(recipeData) {
   this.cuisineType = recipeData.recipe.cuisineType;
@@ -183,9 +152,7 @@ function Recipe(recipeData) {
   this.url = recipeData.recipe.url;
   this.yield = recipeData.recipe.yield;
 }
-
 function editOneRecipe(request, response) {
-
   const SQL = `
   SELECT *
   FROM favoriteRecipe
@@ -200,7 +167,6 @@ function editOneRecipe(request, response) {
       response.render('pages/searches/edit',viewModel);
     });
 }
-
 function updateOneRecipe(request, response, next) {
   const{note,ingredient} = request.body;
   console.log(request.body);
@@ -217,10 +183,7 @@ WHERE id = $3;
     })
     .catch( error => console.log(error));
 }
-
-
 function editOnePersonalRecipe(request, response) {
-
   const SQL = `
   SELECT *
   FROM personalRecipe
@@ -235,7 +198,6 @@ function editOnePersonalRecipe(request, response) {
       response.render('pages/searches/editpersonal',viewModel);
     })
 }
-
 function updateOnePersonalRecipe(request, response, next) {
   const{recipeName,cuisineType,ingredient,mealType,dishType} = request.body;
   console.log(request.body);
@@ -255,17 +217,11 @@ WHERE id = $6;
     })
     .catch( error => console.log(error));
 }
-
 //export modules
-
-
-
 function filterFavorite (request,response){
-
   let healthLabels = request.body.healthLabels;
   const SQL = ` SELECT * FROM favoriteRecipe WHERE healthLabels=$1`;
   const param=[healthLabels];
-
   client.query(SQL,param)
     .then(results =>{
       response.render('pages/cuisines/Favorite',{
@@ -276,18 +232,5 @@ function filterFavorite (request,response){
     .catch((err) => {
       console.error(err);
     });
-
 }
-
-
-
-
-
-
-
-
-
-
-
 module.exports = { getCuisineFromApi, showRecipeDetails, addRecipe, showrecipe, displayPersonalRecipeForm, addPersonalRecipe, showPersonalRecipe, deleteFavorite,updateOneRecipe,editOneRecipe,deletePersonal,editOnePersonalRecipe,updateOnePersonalRecipe,filterFavorite };
-
