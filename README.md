@@ -1,7 +1,7 @@
 # Wordly-Cuisines
-Kanban Board
+- Kanban Board
 https://trello.com/b/Av9rOfbd/wordly-cuisines
-Deployed Heroku App
+- Deployed Heroku App
 https://worldly-cuisines.herokuapp.com/about
 
 
