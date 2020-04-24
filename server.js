@@ -27,7 +27,8 @@ app.use(methodOverride('_method'));
 
 //renders homepage login for new and existing users
 app.get('/',(request, response) => {
-  response.render('pages/homepage');
+  // response.render('pages/homepage');
+  response.send('hey');
 });
 
 //renders about us page
