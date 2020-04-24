@@ -9,27 +9,29 @@
 <body>
     <header>
         <%- include ('../../partials/header') %>
-        <h1>you have: <%= count %> recipe saved</h>
+        <h1>you have: <span> <%= count %> </span>  recipe saved</h>
     </header>
    
     <main>
        
-
+<section class="recipe-box-container">
+     <h2 class="recipebox-h3">Your Personal Recipes </h2>
         <% recipes.forEach(personalRecipe =>{ %>
-            <p><%= personalRecipe.recipeName %></p>
-            <p><%= personalRecipe.cuisineType %></p>
-            <p><%= personalRecipe.mealType %></p>
-            <p><%= personalRecipe.dishType %></p>
-            <p><%= personalRecipe.ingredient %></p>
-
-            <form action="/recipebox/<%=personalRecipe.id %>?_method=DELETE" method="POST">
-                <button>DELETE</button>
+            <div class="one-recipe-box">
+            <p class="recipename"><%= personalRecipe.recipename %></p>
+            <p class="cuisinetype"><%= personalRecipe.cuisinetype %></p>
+            <p class="mealtype"><%= personalRecipe.mealtype %></p>
+            <p class="dishtype"><%= personalRecipe.dishtype %></p>
+            <p class="ingredient"><%= personalRecipe.ingredient %></p>
+        
+            <form  action="/recipebox/<%=personalRecipe.id %>?_method=DELETE" method="POST">
+                <button class="recipebox-delete-button">DELETE</button>
             </form>
 
-            <a href="recipebox/<%= personalRecipe.id %>/edit">EDIT</a>
-
+            <a classe ="recipeboxedit-button" href="recipebox/<%= personalRecipe.id %>/edit">EDIT</a>
+        </div>  
         <%})%>   
-      
+    </section>  
     </main>
     <footer>
         <%- include ('../../partials/footer') %>

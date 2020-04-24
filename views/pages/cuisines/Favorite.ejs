@@ -7,13 +7,14 @@
 <body>
   <header id="header">
     <%- include ('../../partials/header') %>
-    <h1>you have: <%= rowcount %> recipe saved</h>
+    <h1>you have: <span><%= rowcount %> </span> recipe saved</h>
   </header>
   <main>
     <% recipes.forEach(recipe =>{ %>
-
-      <a href="<%= recipe.url %>"> link to the recipe</a>
+<div  class="favorite-container">
+      
       <img src="<%= recipe.image %>"/>
+      <a href="<%= recipe.url %>"> link to the recipe</a>
       <p><%= recipe.recipename %></p>
 
       <% const ingredientList = JSON.parse(recipe.ingredient) %>
@@ -25,11 +26,11 @@
  
 
       <form action="/favorite/<%= recipe.id %>?_method=DELETE" method="POST">
-        <button>DELETE</button>
+        <button class="recipebox-delete-button" >DELETE</button>
     </form>
 
-           <a href="favorite/<%= recipe.id %>/edit">EDIT</a>
-
+           <a classe ="recipeboxedit-button"  href="favorite/<%= recipe.id %>/edit">EDIT</a>
+  </div>
   <%})%>   
 
   <form action="/favorite/filter" method='POST'>
