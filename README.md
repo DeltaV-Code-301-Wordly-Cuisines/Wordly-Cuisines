@@ -1,5 +1,6 @@
 # Wordly-Cuisines
-
+https://trello.com/b/Av9rOfbd/wordly-cuisines
+https://worldly-cuisines.herokuapp.com/about
 
 
 ## Overview
