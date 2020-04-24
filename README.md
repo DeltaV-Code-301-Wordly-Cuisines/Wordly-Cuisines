@@ -6,7 +6,7 @@ https://worldly-cuisines.herokuapp.com/about
 
 
 ## Overview
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for a Code 301 class. (i.e. What's your problem domain?) -->
+Our app Worldly Cuisines will allow a user to search by specified cuisine, for example Nordic cuisine. Then the program wull display the recipes that match that criteria. Then the programcan add a chosen recipe to a favorites page where the user can then update it if they have made the recipe and add notes for subsitutions, general notes or even give the recipe a different name (like Jessie's favorite lasagna). The program will also be able to store a users own recipe, like a family or well loved recipe, and store it for safe keeping. The recipe can then be seen in your 'recipe box' where the user an make updates as necessary or delete if they so choose.
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
