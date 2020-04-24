@@ -1,4 +1,7 @@
 
+
+/* mobileview */
+/*recipe finder*/
 *  {
   box-sizing: border-box;
 }
@@ -37,7 +40,7 @@
   }
   #buttons{
     font-size: 50px;
-    color: #1E90FF;
+    color:rgb(79, 135, 255);
     text-align: center;
     font-weight: bolder;
     margin:2rem;
@@ -198,8 +201,143 @@
   grid-row: 9;
 }
 
+/*personal recipe form*/
+#recipeDetails{
+  height: 200px;
+  width: 200px;
+  margin-top: 20px;
+  text-align:center;
+}
+.submit-personal-recipe{
+  margin-top: 20px;
+  background-color: rgb(79, 135, 255);
+  color: white;
+  height: 35px;
+  font-weight:bold;
+}
+#recipeName{
+margin-bottom: 20px;
+margin-top: 0px;
+}
+#cuisineType{
+
+  margin-bottom: 20px; 
+}
+#mealType{
+  margin-bottom: 20px; 
+}
+.own-recipe-title{
+  margin-top: 20px;
+  color: rgb(79, 135, 255);
+  font-family: 'Sofia';font-size: 35px;
+}
+.recipe-creation-form{
+  margin-bottom: 100px;
+  margin-top: 50px;
+
+}
+
+/* recipie box */
+
+.one-recipe-box a{
+color:rgb(79, 135, 255)  ;
+ 
+}
+.one-recipe-box{
+  width: 80%;
+  margin: 30px auto;
+  padding: 15px;
+  border: 5px solid black;
+  border-radius: 15px;
+  display: grid;
+  margin-bottom: 50px;
+}
+
+.recipebox-delete-button{
+  margin-top: 10px;
+  background-color:rgb(79, 135, 255) ;
+  color: white;
+  margin-bottom: 10px;
+  font-weight: bold;
+  height: 25px;
+  width: 100px;
+}
+.recipebox-h3{
+  margin-top: 20px;
+  color: rgb(79, 135, 255);
+  font-family: 'Sofia';font-size: 35px;
+}
+h1{
+  color: rgb(79, 135, 255);
+}
+span{
+  color: darkred;
+
+}
+/*edit your personal recipe */
+.one-recipe-box{
+  width: 50%;
+  margin: 30px auto;
+  padding: 15px;
+  border: 5px solid black;
+  border-radius: 15px;
+  display: grid;
+}
+
+
+
+.create-view-container{
+  text-align: center;
+}
+.ingredient{
+  height: 200px;
+  width: 200px;
+  margin-top: 20px;
+  text-align:center;
+}
+.recipename{
+  margin-bottom: 20px;
+  margin-top: 0px;
+}
+
+.cuisinetype{
+  margin-bottom: 20px; 
+}
+.mealtype{
+  margin-bottom: 20px; 
+ 
+}
+
+#update-form{
+  margin-top: 70px;
+  margin-bottom: 100px;
+}
+
+.update-personal{
+  margin-top: 20px;
+  background-color: rgb(79, 135, 255);
+  color: white;
+  height: 35px;
+  font-weight:bold;
+
+}
+.view-title{
+  margin-top: 20px;
+  color: rgb(79, 135, 255);
+  font-family: 'Sofia';font-size: 35px;
+}
+
+
+
+/*favorite */
+
+.favorite-container{
+
+}
+/* desktopview */
 @media(min-width:960px){
 
+/*recipe finder*/
   .cuisine-container{
     display: grid;
     grid-template-columns: 350px 350px 350px  ;
@@ -226,7 +364,7 @@
   }
   h3#buttons{
 
-    color: #1E90FF;
+    color: brown;
     text-align: center;
     font-weight: bolder;
     margin:2rem;
@@ -429,9 +567,21 @@ main#main-content{
   margin-top:50px;
 }
 img{
-  width:100px;
-  height:100px;
+  width:200px;
+  height:200px;
 }
 }
 
-
+/*favorit recipe*/
+.favorite-container{
+  width: 80%;
+  margin: 30px auto;
+  padding: 15px;
+  border: 5px solid black;
+  border-radius: 15px;
+  display: grid;
+  margin-bottom: 50px;
+}
+.card-container > * {
+  text-align: justify;
+}

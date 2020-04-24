@@ -12,9 +12,10 @@
     <main>
         <div class="create-recipe-container">
             <div class="recipe-creation-form">
+                
                 <form action="/recipeBox" method="POST">
+                    <h2 class="own-recipe-title">Add Your Own Recipe</h2>
                     <ul class="recipe-creation-form">
-                        <br><br><br><br>
                    <li> <label for="recipeName">
                         <input type="text" name="recipeName" id="recipeName" placeholder="Recipe Title" required>
                     </label></li>
@@ -78,7 +79,7 @@
                             required>
                     </label></li>
 
-                   <li> <input type="submit" value="Add Recipe"></li>
+                   <li> <input type="submit" class="submit-personal-recipe" value="Add Recipe"></li>
                     </ul>
                 </form>
             </div>

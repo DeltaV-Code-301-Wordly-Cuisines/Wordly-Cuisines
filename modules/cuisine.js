@@ -142,11 +142,10 @@ function addPersonalRecipe(request, response) {
   `;
   const values = [recipeName, image, cuisineType, ingredient, mealType, dishType];
   client.query(SQL, values)
-    .then(results => {
-      let id = results.rows[0].id;
-      response.redirect(`/recipeBox`);
+    .then(
+      response.redirect(`/recipeBox`)
 
-    })
+    )
     .catch((err) => {
       console.error(err);
 
