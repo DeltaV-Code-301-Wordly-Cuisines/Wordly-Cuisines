@@ -52,6 +52,7 @@ body {
 /* NAVIGATION STYLING */
 #page-nav {
   width: 100%;
+  right: 0;
   background-color: rgb(0, 0, 0);
 }
 
@@ -77,12 +78,13 @@ body {
 }
 
 /* MOBILE NAV */
-@media screen and (max-width: 768px){
+@media screen and (max-width: 812px){
   /* Show Hamburger */
   #page-nav label {
+
     display: inline-block;
     color: #fff;
-    background: #a02620;
+    background: rgb(79, 135, 255);
     font-style: normal;
     font-size: 1.2em;
     padding: 10px;

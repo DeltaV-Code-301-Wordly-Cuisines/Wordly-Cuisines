@@ -7,22 +7,28 @@
   <header id="header">
     <%- include ('../../partials/header') %>
   </header>
-  
-    <main id="main-content">
-    <section>
-        <% recipes.forEach(recipe => {%>
-            <img src="<%= recipe.image %>"/>
-            <p><%= recipe.recipeName %></p>
-            <p><%= recipe.cuisineType %></p>
-            <p><%= recipe.yield %></p>
-            <p><%= recipe.url %></p>
-            <% }) %>
-    </section>
+  <main id="main-content">
+    <% recipes.forEach(recipe => {%>
+    <a href="<%= recipe.url %>"> recipe</a>
+    <img src="<%= recipe.image %>"/>
+    <p><%= recipe.recipeName %></p>
+    <p><%= recipe.cuisineType %></p>
+    <p><%= recipe.yield %></p>
+    <form action="/recipe/<%= recipe.recipeName %>" method="POST">
+     <input type="hidden" name="recipe" value="<%=JSON.stringify(recipe) %>">
+     <input type="submit" value="View Recipe Details"/>
+    </form>
+    <form action="/favorite" method='POST'>
+      <input type="hidden" name="recipe" value="<%=JSON.stringify(recipe) %>">
+      <input type="submit" name="favorite" value="Add To Favorite">
+    </form>
+    <% }) %>
   </main>
-  </body>
-  <footer>
+  <footer id="footer">
     <%- include ('../../partials/footer') %>
   </footer>
+</body>
+</html>
   
    
   <footer id="footer">   
