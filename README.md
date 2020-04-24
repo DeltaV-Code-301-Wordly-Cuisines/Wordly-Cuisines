@@ -1,4 +1,4 @@
-# Wordly-Cuisines
+# Wordly-Cuisines: Marie Antons, Sihem Azibi, James Zobian
 - Kanban Board
 https://trello.com/b/Av9rOfbd/wordly-cuisines
 - Deployed Heroku App
