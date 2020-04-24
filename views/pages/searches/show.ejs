@@ -1,9 +1,10 @@
-  
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <%- include ('../../partials/head') %>
-  </head>
+
+<head>
+  <%- include ('../../partials/head') %>
+</head>
+
 <body>
   <header id="header">
     <%- include ('../../partials/header') %>
@@ -11,26 +12,31 @@
 <div class="showFlow">
   <main id="main-content">
     <% recipes.forEach(recipe => {%>
-      <section class="showFlow">
-    <a class="showFlow" href="<%= recipe.url %>"> recipe</a>
-    <img class="showFlow" src="<%= recipe.image %>"/>
-    <p class="showFlow"><%= recipe.recipeName %></p>
-    <p class="showFlow"><%= recipe.cuisineType %></p>
-    <p class="showFlow"><%= recipe.yield %></p>
-    <form class="showFlow" action="/recipe/<%= recipe.recipeName %>" method="POST">
-     <input class="showFlow" type="hidden" name="recipe" value="<%=JSON.stringify(recipe) %>">
-     <input class="showFlow" type="submit" value="View Recipe Details"/>
+    <div class="favorite-container">
+    
+    <img src="<%= recipe.image %>" />
+    <p class="favorite-recipename"><%= recipe.recipeName %></p>
+    <a href="<%= recipe.url %>"> Go to Recipe</a>
+    <p>Cuisine Type: <%= recipe.cuisineType %></p>
+    <p>Yield: <%= recipe.yield %></p>
+    <form action="/recipe/<%= recipe.recipeName %>" method="POST">
+      <input type="hidden" name="recipe" value="<%=JSON.stringify(recipe) %>">
+      <input class="recipebox-delete-button" type="submit" value="Details" />
     </form>
-    <form class="showFlow" action="/favorite" method='POST'>
-      <input class="showFlow" type="hidden" name="recipe" value="<%=JSON.stringify(recipe) %>">
-      <input class="showFlow" type="submit" name="favorite" value="Add To Favorite">
+    <form action="/favorite" method='POST'>
+      <input type="hidden" name="recipe" value="<%=JSON.stringify(recipe) %>">
+      <input class="recipebox-delete-button" type="submit" name="favorite" value="Add Favorite">
+
     </form>
-     </section>
+    </div>
     <% }) %>
+
+
   </main>
 </div>
   <footer id="footer">
     <%- include ('../../partials/footer') %>
   </footer>
 </body>
+
 </html>

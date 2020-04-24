@@ -167,16 +167,22 @@ function editOneRecipe(request, response) {
       response.render('pages/searches/edit',viewModel);
     });
 }
+<<<<<<< HEAD
+
+function updateOneRecipe(request, response) {
+=======
 function updateOneRecipe(request, response, next) {
+>>>>>>> 6b2aed93636b1612330f39db6679d8d436b15eb3
   const{note,ingredient} = request.body;
   console.log(request.body);
+  const ingredientArray=ingredient.split(/\r?\n/);
   const SQL = `
 UPDATE favoriteRecipe SET
 note= $1,
 ingredient=$2
 WHERE id = $3;
 `;
-  const parameters = [note,ingredient, parseInt(request.params.id)];
+  const parameters = [note,JSON.stringify(ingredientArray), parseInt(request.params.id)];
   client.query(SQL, parameters)
     .then(() => {
       response.redirect(`/favorite`);
@@ -196,9 +202,14 @@ function editOnePersonalRecipe(request, response) {
         personal
       };
       response.render('pages/searches/editpersonal',viewModel);
-    })
+    });
 }
+<<<<<<< HEAD
+
+function updateOnePersonalRecipe(request, response) {
+=======
 function updateOnePersonalRecipe(request, response, next) {
+>>>>>>> 6b2aed93636b1612330f39db6679d8d436b15eb3
   const{recipeName,cuisineType,ingredient,mealType,dishType} = request.body;
   console.log(request.body);
   const SQL = `

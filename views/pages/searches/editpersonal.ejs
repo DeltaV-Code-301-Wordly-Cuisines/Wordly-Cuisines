@@ -17,11 +17,11 @@
             <form id="update-form" action="/recipebox/<%= personal.id %>/edit?_method=PUT" method="post">
                 <ul>
                
-                <li><input  class="recipename" type="text" name="recipeName" value="<%= personal.recipeName %>" placeholder="recipeName"></li>
-                <li><input  class="cuisinetype" type="text" name="cuisineType" value="<%= personal.cuisineType %>" placeholder="cuisineType"></li>
-                    <li><input  class="mealtype" type="text" name="mealType" value="<%= personal.mealType %>" placeholder="mealType"></li>
-                        <li><input  class="dishtype" type="text" name="dishType" value="<%= personal.dishType %>" placeholder="dishType"></li>
-                        <li> <input class="ingredient"type="text" name="ingredient" value="<%= personal.ingredient %>" placeholder="ingredient"></li>
+                <li><input  class="recipename" type="text" name="recipeName" value="<%= personal.recipeName %>" placeholder="Recipe Name"></li>
+                <li><input  class="cuisinetype" type="text" name="cuisineType" value="<%= personal.cuisineType %>" placeholder="Cuisine Type"></li>
+                    <li><input  class="mealtype" type="text" name="mealType" value="<%= personal.mealType %>" placeholder="Meal Type"></li>
+                        <li><input  class="dishtype" type="text" name="dishType" value="<%= personal.dishType %>" placeholder="Dish Type"></li>
+                        <li> <textarea class="ingredient"type="text" name="ingredient"  placeholder="Ingredient"><%= personal.ingredient %></textarea></li>
                             <li> <button class="update-personal" type="submit">UPDATE YOUR RECIPE</button></li>
 
             </ul>

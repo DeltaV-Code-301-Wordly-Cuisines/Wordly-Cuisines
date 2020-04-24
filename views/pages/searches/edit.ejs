@@ -2,24 +2,31 @@
 <html>
 
 <head>
-    
+    <%- include ('../../partials/head') %>
 </head>
 
 <body>
-
+<header>
+    <%- include ('../../partials/header') %>
+</header>
     <main>
 
 
         <section class="create-view container">
-            <h2 class="view-title">Edit recipe <%= recipes.id %></h2>
+            <h2 class="view-title">Edit Recipe</h2>
             <form id="update-form" action="/favorite/<%= recipes.id %>/edit?_method=PUT" method="post">
-                <input type="text" name="ingredient" value="<%= recipes.ingredient %>" placeholder="ingredient">
-                <textarea id="note" name="note" rows="4" cols="50">ADD YOUR NOTE</textarea>
-                <button type="submit">Update Note</button>
+                <ul>
+                <li><textarea id ="edit-ingredient" type="text" name="ingredient"  placeholder="ingredient"><%=JSON.parse(recipes.ingredient).join('\r\n') %></textarea></li>
+                <li><textarea id="note" name="note" rows="4" cols="50">ADD YOUR NOTE</textarea></li>
+                    <li><button class="update-personal" type="submit">Update Note</button></li>
+            </ul>
             </form>
         </section>
 
     </main>
+    <footer>
+        <%- include ('../../partials/footer') %>
+    </footer>
 </body>
 
 </html>
