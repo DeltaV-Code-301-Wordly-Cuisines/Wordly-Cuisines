@@ -1,4 +1,57 @@
+
 /* RECIPE FINDER PAGE */
+/* mobile */
+@media (max-width:767px){
+p.showFlow{
+  font-size:25px;
+  text-align: center;
+}
+a.showFlow{
+  display:grid;
+  text-align: center;
+  margin-top: 19px;
+}
+img.showFlow{
+  display:block;
+  margin-right:auto;
+  margin-left:auto;
+}
+form.showFlow{
+  text-align:center;
+}
+}
+/* tablet */
+@media(min-width:768px){
+  section.showFlow{
+    /* display:flex;
+    flex-direction:row;
+    height:250px; */
+    display: grid; 
+    grid-template-columns: repeat( auto-fit, minmax(400px, 1fr) );
+     grid-template-rows: repeat( auto-fit, minmax(400px, 1fr) );
+    
+    
+  }
+
+  /* p.showFlow{
+    font-size:25px;
+    text-align: center;
+  }
+  a.showFlow{
+    display:grid;
+    text-align: center;
+    margin-top: 19px;
+    font-size:25px;
+  }
+  img.showFlow{
+    display:block;
+    margin-right:auto;
+    margin-left:auto;
+  }
+  form.showFlow{
+    text-align:center;
+  } */
+  }
 
 /* ADD RECIPE PAGE */
 
