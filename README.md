@@ -17,6 +17,8 @@ Our app Worldly Cuisines will allow a user to search by specified cuisine, for e
 - HTML
 - CSS
 - JavaScript
+- SQL
+
 
 
 ### Frameworks and Libraries
