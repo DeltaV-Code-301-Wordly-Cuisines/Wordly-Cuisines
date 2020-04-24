@@ -1,33 +1,40 @@
-# Wordly-Cuisines
-
+# Wordly-Cuisines: Marie Antons, Sihem Azibi, James Zobian
+- Kanban Board
+https://trello.com/b/Av9rOfbd/wordly-cuisines
+- Deployed Heroku App
+https://worldly-cuisines.herokuapp.com/about
 
 
 ## Overview
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for a Code 301 class. (i.e. What's your problem domain?) -->
+Our app Worldly Cuisines will allow a user to search by specified cuisine, for example Nordic cuisine. Then the program will display the recipes that match that criteria. Then the programcan add a chosen recipe to a favorites page where the user can then update it if they have made the recipe and add notes for subsitutions, general notes or even give the recipe a different name (like Jessie's favorite lasagna). The program will also be able to store a users own recipe, like a family or well loved recipe, and store it for safe keeping. The recipe can then be seen in your 'recipe box' where the user an make updates as necessary or delete if they so choose.
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
 
 ## Architecture
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+### Languages Used
+- HTML
+- CSS
+- JavaScript
+- SQL
 
-## Change Log
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. 
-
-01-01-2001 4:59pm - Application now has a fully-functional express server, with GET and POST routes for the book resource.
 
 
-Number and name of feature: ________________________________
+### Frameworks and Libraries
+- Node.js
+- EJS
+- Express
+- Superagent
 
-Estimate of time needed to complete: _____
 
-Start time: _____
+### Middleware 
+- CORS
+- Method-override
 
-Finish time: _____
 
-Actual time needed to complete: _____
 
 
 ## Credits and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
--->
+Thank you to Ian and Keith for all of their support and help along the way. 
+We used other various resources on how to style aspects of our website.
