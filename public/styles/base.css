@@ -206,7 +206,7 @@
   height: 200px;
   width: 200px;
   margin-top: 20px;
-  text-align:center;
+  text-align:justify;
 }
 .submit-personal-recipe{
   margin-top: 20px;
@@ -276,7 +276,7 @@ span{
 }
 /*edit your personal recipe */
 .one-recipe-box{
-  width: 50%;
+  width: 80%;
   margin: 30px auto;
   padding: 15px;
   border: 5px solid black;
@@ -294,6 +294,7 @@ span{
   width: 200px;
   margin-top: 20px;
   text-align:center;
+ 
 }
 .recipename{
   margin-bottom: 20px;
@@ -584,8 +585,23 @@ img{
   width:200px;
   height:200px;
 }
-}
 
+.card-container > * {
+  text-align: center;
+}
+.one-recipe-box{
+  width: 50%;
+  margin: 30px auto;
+  padding: 15px;
+  border: 5px solid black;
+  border-radius: 15px;
+  display: grid;
+  margin-bottom: 50px;
+}
+}
+.ingredient{
+  white-space: pre-wrap;
+}
 /*favorit recipe*/
 .favorite-container{
   width: 80%;
@@ -595,7 +611,4 @@ img{
   border-radius: 15px;
   display: grid;
   margin-bottom: 50px;
-}
-.card-container > * {
-  text-align: justify;
 }

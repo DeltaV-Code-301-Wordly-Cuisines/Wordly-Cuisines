@@ -236,4 +236,4 @@ function filterFavorite (request,response){
       console.error(err);
     });
 }
-module.exports = { getCuisineFromApi, showRecipeDetails, addRecipe, showrecipe, displayPersonalRecipeForm, addPersonalRecipe, showPersonalRecipe, deleteFavorite,updateOneRecipe,editOneRecipe,deletePersonal,editOnePersonalRecipe,updateOnePersonalRecipe,filterFavorite };
+module.exports = { getCuisineFromApi, showRecipeDetails, addRecipe, showrecipe, displayPersonalRecipeForm, addPersonalRecipe, showPersonalRecipe, deleteFavorite,updateOneRecipe,editOneRecipe,deletePersonal,editOnePersonalRecipe,updateOnePersonalRecipe,filterFavorite};
