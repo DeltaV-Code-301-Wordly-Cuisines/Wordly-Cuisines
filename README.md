@@ -13,6 +13,23 @@ Our app Worldly Cuisines will allow a user to search by specified cuisine, for e
 
 ## Architecture
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+### Languages Used
+- HTML
+- CSS
+- JavaScript
+
+
+### Frameworks and Libraries
+- Node.js
+- EJS
+- Express
+- Superagent
+
+
+### Middleware 
+- CORS
+- Method-override
+
 
 
 
